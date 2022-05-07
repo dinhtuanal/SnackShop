@@ -879,6 +879,19 @@
           }
         }
       },
+      "BusinessLogicLayer/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Data": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BusinessLogicLayer.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BusinessLogicLayer.dll": {}
+        }
+      },
       "Data/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -2527,6 +2540,11 @@
         "version.txt"
       ]
     },
+    "BusinessLogicLayer/1.0.0": {
+      "type": "project",
+      "path": "../BusinessLogicLayer/BusinessLogicLayer.csproj",
+      "msbuildProject": "../BusinessLogicLayer/BusinessLogicLayer.csproj"
+    },
     "Data/1.0.0": {
       "type": "project",
       "path": "../Data/Data.csproj",
@@ -2540,6 +2558,7 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "BusinessLogicLayer >= 1.0.0",
       "Data >= 1.0.0",
       "Microsoft.EntityFrameworkCore.Design >= 6.0.4",
       "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.4",
@@ -2573,6 +2592,9 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
+            "D:\\TaiLieu\\ASP Core\\Project\\SnackShop\\App\\BusinessLogicLayer\\BusinessLogicLayer.csproj": {
+              "projectPath": "D:\\TaiLieu\\ASP Core\\Project\\SnackShop\\App\\BusinessLogicLayer\\BusinessLogicLayer.csproj"
+            },
             "D:\\TaiLieu\\ASP Core\\Project\\SnackShop\\App\\Data\\Data.csproj": {
               "projectPath": "D:\\TaiLieu\\ASP Core\\Project\\SnackShop\\App\\Data\\Data.csproj"
             }

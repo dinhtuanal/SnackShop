@@ -1,5 +1,6 @@
 ﻿using Data.Configurations;
 using Data.Entities;
+using Data.Extensions;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -21,8 +22,11 @@ namespace Data.DbContext
             base.OnModelCreating(builder);
             builder.ApplyConfiguration(new CategoryConfiguration());
             builder.ApplyConfiguration(new FoodConfiguration());
+            builder.ApplyConfiguration(new SubCategoryConfiguration());
+            builder.Seed();
         }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Food> Foods { get; set; }
+        public DbSet<SubCategory> SubCategories { get; set; }
     }
 }

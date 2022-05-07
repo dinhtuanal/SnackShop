@@ -11,7 +11,8 @@ namespace Data.Entities
     {
         public Category()
         {
-            SubCategories = new List<SubCategory>();        }
+            SubCategories = new List<SubCategory>();
+        }
         public Guid CategoryId { get; set; }
         public string CategoryName { get; set; }
         public string Description { get; set; }

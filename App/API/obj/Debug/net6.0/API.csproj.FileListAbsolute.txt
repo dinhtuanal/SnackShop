@@ -69,3 +69,5 @@ D:\TaiLieu\ASP Core\Project\SnackShop\App\API\obj\Debug\net6.0\API.genruntimecon
 D:\TaiLieu\ASP Core\Project\SnackShop\App\API\obj\Debug\net6.0\ref\API.dll
 D:\TaiLieu\ASP Core\Project\SnackShop\App\API\bin\Debug\net6.0\Humanizer.dll
 D:\TaiLieu\ASP Core\Project\SnackShop\App\API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\TaiLieu\ASP Core\Project\SnackShop\App\API\bin\Debug\net6.0\BusinessLogicLayer.dll
+D:\TaiLieu\ASP Core\Project\SnackShop\App\API\bin\Debug\net6.0\BusinessLogicLayer.pdb

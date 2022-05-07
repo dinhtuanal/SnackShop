@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Data.Migrations
 {
     [DbContext(typeof(SnackShopDbContext))]
-    [Migration("20220507085530_buildEntities")]
-    partial class buildEntities
+    [Migration("20220507103952_configSeedData")]
+    partial class configSeedData
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -44,6 +44,22 @@ namespace Data.Migrations
                     b.HasKey("CategoryId");
 
                     b.ToTable("Categories");
+
+                    b.HasData(
+                        new
+                        {
+                            CategoryId = new Guid("7c318165-4fd6-4fe2-a85c-069b08ae611f"),
+                            CategoryName = "Thức ăn nhanh",
+                            Description = "Bạn có dùng thức ăn nhanh? Có? Hãy bỏ đi.",
+                            Status = 1
+                        },
+                        new
+                        {
+                            CategoryId = new Guid("a3896e4f-7a28-4668-8ec1-a133b7adb34c"),
+                            CategoryName = "Đồ uống",
+                            Description = "Free Ship trong phạm vi 100m",
+                            Status = 1
+                        });
                 });
 
             modelBuilder.Entity("Data.Entities.Food", b =>
@@ -85,34 +101,140 @@ namespace Data.Migrations
                     b.HasIndex("SubCategoryId");
 
                     b.ToTable("Foods");
+
+                    b.HasData(
+                        new
+                        {
+                            FoodId = new Guid("8105ae8f-5a99-4fb7-b373-2e787c1fc33f"),
+                            Content = "Được chiên bằng dầu thừa",
+                            DateCreated = new DateTime(2022, 5, 7, 17, 39, 52, 79, DateTimeKind.Local).AddTicks(5005),
+                            Description = "Miễn phí tiền ship nếu mua trực tiếp tại quán",
+                            Image = "https://danviet.mediacdn.vn/296231569849192448/2021/12/25/chien-khoai-tay-nho-them-2-buoc-nay-truoc-khi-tha-vao-chao-dau-10-mieng-gion-ca-10-maxresdefault-1639967373-880-width640height360-1640420283090-1640420283223274300555.jpg",
+                            Name = "Khoai tây chiên",
+                            Price = 17000m,
+                            Status = 1,
+                            SubCategoryId = new Guid("5f613cd6-2e3c-4390-94f9-a12efb1060ec")
+                        },
+                        new
+                        {
+                            FoodId = new Guid("2555c257-cba5-41cf-80c0-68b0a26dd50a"),
+                            Content = "Được chiên bằng dầu thừa",
+                            DateCreated = new DateTime(2022, 5, 7, 17, 39, 52, 79, DateTimeKind.Local).AddTicks(5018),
+                            Description = "Miễn phí tiền ship nếu mua trực tiếp tại quán",
+                            Image = "https://ngonaz.com/wp-content/uploads/2021/09/cach-lam-ca-vien-chien-1.jpg",
+                            Name = "Cá viên chiên",
+                            Price = 28000m,
+                            Status = 1,
+                            SubCategoryId = new Guid("5f613cd6-2e3c-4390-94f9-a12efb1060ec")
+                        },
+                        new
+                        {
+                            FoodId = new Guid("23a2b688-28f9-404a-bc14-80a6537ceb22"),
+                            Content = "Cánh gà nướng BBQ đặc trưng bởi hương vị BBQ và được tẩm ướp cũng các gia vị đậm đà, thịt gà mềm ngọt tạo nên sức hấp dẫn cho sản phẩm.",
+                            DateCreated = new DateTime(2022, 5, 7, 17, 39, 52, 79, DateTimeKind.Local).AddTicks(5037),
+                            Description = "Giảm giá 2,000đ/xiên trong tuần đầu mở bán (từ 23/11 – 29/11/2020)",
+                            Image = "https://www.famima.vn/wp-content/uploads/2020/11/Resize-Website-Pop-s%E1%BA%A3n-ph%E1%BA%A9m-m%E1%BB%9Bi-23.11.2020-1.png",
+                            Name = "Xiên Cánh Gà Nướng BBQ",
+                            Price = 16000m,
+                            Status = 1,
+                            SubCategoryId = new Guid("6b43eda0-ca64-43e3-8974-6bd6be93b0b5")
+                        },
+                        new
+                        {
+                            FoodId = new Guid("c5e79173-f16e-45a6-9d8e-e94d3b17baed"),
+                            Content = "Thịt gà góc tư còn da, cắt thành những miếng nhỏ đều nhau, tẩm ướp cùng xốt nướng yakitori kiểu Nhật trong thời gian dài, giúp cho phần thịt gà được ngấm đều gia vị.Sản phẩm sẽ có độ mềm ngọt của thịt gà, béo béo của phần da gà,đậm đà của xốt ướp,dậy mùi thơm lừng sau khi được nướng trực tiếp.",
+                            DateCreated = new DateTime(2022, 5, 7, 17, 39, 52, 79, DateTimeKind.Local).AddTicks(5046),
+                            Description = "Miễn phí tiền ship nếu mua trực tiếp tại quán",
+                            Image = "https://www.famima.vn/wp-content/uploads/2019/07/POP-15.07.2019-Web.png",
+                            Name = "Xiên Đùi Gà Nướng Kiểu Nhật",
+                            Price = 19000m,
+                            Status = 1,
+                            SubCategoryId = new Guid("6b43eda0-ca64-43e3-8974-6bd6be93b0b5")
+                        },
+                        new
+                        {
+                            FoodId = new Guid("9709c008-f3da-4cfb-93ba-db4d3a58af61"),
+                            Content = "Kem sữa Macchiato, Không chọn Topping, Pudding trứng, Thạch nha đam, Trân châu đen, Trân châu trắng",
+                            DateCreated = new DateTime(2022, 5, 7, 17, 39, 52, 79, DateTimeKind.Local).AddTicks(5072),
+                            Description = "Miễn phí tiền ship nếu mua trực tiếp tại quán",
+                            Image = "https://pozaatea.vn/wp-content/uploads/2021/08/2-1.png",
+                            Name = "Trà sữa trân châu đường đen",
+                            Price = 25000m,
+                            Status = 1,
+                            SubCategoryId = new Guid("aace8b10-cb22-4aa1-98bd-1f469042c35f")
+                        },
+                        new
+                        {
+                            FoodId = new Guid("8b5de02c-0745-42cb-9f22-4112050423b1"),
+                            Content = "Nghe tên rất chi là xanh",
+                            DateCreated = new DateTime(2022, 5, 7, 17, 39, 52, 79, DateTimeKind.Local).AddTicks(5084),
+                            Description = "Miễn phí tiền ship nếu mua trực tiếp tại quán",
+                            Image = "http://congthucphache.com/wp-content/uploads/2019/12/thai-xanh.jpg",
+                            Name = "Trà sữa thái xanh",
+                            Price = 27000m,
+                            Status = 1,
+                            SubCategoryId = new Guid("aace8b10-cb22-4aa1-98bd-1f469042c35f")
+                        });
                 });
 
             modelBuilder.Entity("Data.Entities.SubCategory", b =>
                 {
                     b.Property<Guid>("SubCategoryId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("uniqueidentifier")
+                        .HasDefaultValueSql("(newid())");
 
                     b.Property<Guid?>("CategoryId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime?>("DateCreated")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("datetime");
 
                     b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
 
                     b.Property<int>("Status")
                         .HasColumnType("int");
 
                     b.Property<string>("SubCategoryName")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
 
                     b.HasKey("SubCategoryId");
 
                     b.HasIndex("CategoryId");
 
-                    b.ToTable("SubCategory");
+                    b.ToTable("SubCategories");
+
+                    b.HasData(
+                        new
+                        {
+                            SubCategoryId = new Guid("5f613cd6-2e3c-4390-94f9-a12efb1060ec"),
+                            CategoryId = new Guid("7c318165-4fd6-4fe2-a85c-069b08ae611f"),
+                            DateCreated = new DateTime(2022, 5, 7, 17, 39, 52, 79, DateTimeKind.Local).AddTicks(4980),
+                            Description = "Nhiều dầu mỡ, ăn nhanh ngán, nhưng được cái là nhanh no",
+                            Status = 1,
+                            SubCategoryName = "Đồ chiên"
+                        },
+                        new
+                        {
+                            SubCategoryId = new Guid("6b43eda0-ca64-43e3-8974-6bd6be93b0b5"),
+                            CategoryId = new Guid("7c318165-4fd6-4fe2-a85c-069b08ae611f"),
+                            DateCreated = new DateTime(2022, 5, 7, 17, 39, 52, 79, DateTimeKind.Local).AddTicks(5028),
+                            Description = "Nướng trên than",
+                            Status = 1,
+                            SubCategoryName = "Đồ nướng"
+                        },
+                        new
+                        {
+                            SubCategoryId = new Guid("aace8b10-cb22-4aa1-98bd-1f469042c35f"),
+                            CategoryId = new Guid("a3896e4f-7a28-4668-8ec1-a133b7adb34c"),
+                            DateCreated = new DateTime(2022, 5, 7, 17, 39, 52, 79, DateTimeKind.Local).AddTicks(5064),
+                            Description = "Trà + sữa + đường + nước",
+                            Status = 1,
+                            SubCategoryName = "Trà sữa"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -140,6 +262,15 @@ namespace Data.Migrations
                         .HasFilter("[NormalizedName] IS NOT NULL");
 
                     b.ToTable("AspNetRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "8D04DCE2-969A-435D-BBA4-DF3F325983DC",
+                            ConcurrencyStamp = "c7c74a7e-b68e-4361-ba77-b3127c6b5907",
+                            Name = "admin",
+                            NormalizedName = "admin"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -230,6 +361,25 @@ namespace Data.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "69BD714F-9576-45BA-B5B7-F00649BE00DE",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "f0ed6ac7-9897-4075-8114-e8af0aff96b7",
+                            Email = "dinhtuanal@gmail.com",
+                            EmailConfirmed = true,
+                            LockoutEnabled = false,
+                            NormalizedEmail = "dinhtuanal@gmail.com",
+                            NormalizedUserName = "dinhtuanal",
+                            PasswordHash = "AQAAAAEAACcQAAAAEGsnAV/e17yep7Ru/9h0j9Gc2M2MKxZFfEZEMJW+IRJGfkGij0+K8VD1/2dYbsnJyA==",
+                            PhoneNumber = "0999686888",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "",
+                            TwoFactorEnabled = false,
+                            UserName = "dinhtuanal"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
@@ -292,6 +442,13 @@ namespace Data.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("AspNetUserRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            UserId = "69BD714F-9576-45BA-B5B7-F00649BE00DE",
+                            RoleId = "8D04DCE2-969A-435D-BBA4-DF3F325983DC"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
@@ -327,7 +484,8 @@ namespace Data.Migrations
                 {
                     b.HasOne("Data.Entities.Category", "Category")
                         .WithMany("SubCategories")
-                        .HasForeignKey("CategoryId");
+                        .HasForeignKey("CategoryId")
+                        .HasConstraintName("FK_SubCategories_Categories");
 
                     b.Navigation("Category");
                 });
