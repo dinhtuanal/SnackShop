@@ -1,0 +1,12 @@
+D:\TaiLieu\ASP Core\Project\SnackShop\App\SharedObjects\bin\Debug\net6.0\SharedObjects.deps.json
+D:\TaiLieu\ASP Core\Project\SnackShop\App\SharedObjects\bin\Debug\net6.0\SharedObjects.dll
+D:\TaiLieu\ASP Core\Project\SnackShop\App\SharedObjects\bin\Debug\net6.0\SharedObjects.pdb
+D:\TaiLieu\ASP Core\Project\SnackShop\App\SharedObjects\obj\Debug\net6.0\SharedObjects.csproj.AssemblyReference.cache
+D:\TaiLieu\ASP Core\Project\SnackShop\App\SharedObjects\obj\Debug\net6.0\SharedObjects.GeneratedMSBuildEditorConfig.editorconfig
+D:\TaiLieu\ASP Core\Project\SnackShop\App\SharedObjects\obj\Debug\net6.0\SharedObjects.AssemblyInfoInputs.cache
+D:\TaiLieu\ASP Core\Project\SnackShop\App\SharedObjects\obj\Debug\net6.0\SharedObjects.AssemblyInfo.cs
+D:\TaiLieu\ASP Core\Project\SnackShop\App\SharedObjects\obj\Debug\net6.0\SharedObjects.csproj.CoreCompileInputs.cache
+D:\TaiLieu\ASP Core\Project\SnackShop\App\SharedObjects\obj\Debug\net6.0\SharedObjects.dll
+D:\TaiLieu\ASP Core\Project\SnackShop\App\SharedObjects\obj\Debug\net6.0\refint\SharedObjects.dll
+D:\TaiLieu\ASP Core\Project\SnackShop\App\SharedObjects\obj\Debug\net6.0\SharedObjects.pdb
+D:\TaiLieu\ASP Core\Project\SnackShop\App\SharedObjects\obj\Debug\net6.0\ref\SharedObjects.dll
