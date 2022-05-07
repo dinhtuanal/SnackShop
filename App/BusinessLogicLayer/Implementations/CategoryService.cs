@@ -34,7 +34,7 @@ namespace BusinessLogicLayer.Implementations
 
         public async Task<int> Delele(string categoryId)
         {
-            var category = await _context.Categories.FindAsync(categoryId);
+            var category = await _context.Categories.FindAsync(Guid.Parse(categoryId));
             if(category == null)
             {
                 throw new SnackShopException("Can not find category"); 
@@ -51,7 +51,8 @@ namespace BusinessLogicLayer.Implementations
                 {
                     CategoryId=x.CategoryId,
                     CategoryName=x.CategoryName,
-                    Description=x.Description
+                    Description=x.Description,
+                    Status = x.Status
                 }
             );
             return vCategories;
@@ -59,7 +60,7 @@ namespace BusinessLogicLayer.Implementations
 
         public async Task<VCategory> GetById(string categoryId)
         {
-            var category = await _context.Categories.FindAsync(categoryId);
+            var category = await _context.Categories.FindAsync(Guid.Parse(categoryId));
             if (category == null)
             {
                 throw new SnackShopException("Can not find category");
@@ -68,14 +69,15 @@ namespace BusinessLogicLayer.Implementations
             {
                 CategoryId = category.CategoryId,
                 CategoryName = category.CategoryName,
-                Description = category.Description
+                Description = category.Description,
+                Status = category.Status
             };
             return vCategory;
         }
 
         public async Task<int> Update(CategoryViewModel model)
         {
-            var category = await _context.Categories.FindAsync(model.CategoryId);
+            var category = await _context.Categories.FindAsync(Guid.Parse(model.CategoryId));
             if (category == null)
             {
                 throw new SnackShopException("Can not find category");

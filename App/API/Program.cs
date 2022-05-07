@@ -20,6 +20,8 @@ builder.Services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkSto
 
 #region Add dependenceIjection
 builder.Services.AddTransient<ICategoryService, CategoryService>();
+builder.Services.AddTransient<ISubCategoryService, SubCategoryService>();
+builder.Services.AddTransient<IFoodService, FoodService>();
 #endregion
 
 var app = builder.Build();
