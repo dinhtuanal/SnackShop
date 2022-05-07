@@ -15,5 +15,6 @@ namespace SharedObjects.ValueObjects
         public DateTime? DateCreated { get; set; }
         public Status Status { get; set; }
         public Guid? CategoryId { get; set; }
+        public string CategoryName { get; set; }
     }
 }

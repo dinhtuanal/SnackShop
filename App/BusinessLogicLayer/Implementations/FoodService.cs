@@ -49,59 +49,76 @@ namespace BusinessLogicLayer.Implementations
 
         public List<VFood> GetAll()
         {
-            var foods = _context.Foods.ToList();
-            var vFoods = foods.ConvertAll(x => 
-                new VFood { 
-                    FoodId = x.FoodId,
-                    Name = x.Name, 
-                    Price = x.Price, 
-                    Image = x.Image,
-                    Description = x.Description,
-                    Content= x.Content,
-                    Status= x.Status,
-                    DateCreated= x.DateCreated,
-                }
-            );
-            return vFoods;
+            var query = from f in _context.Foods
+                       join s in _context.SubCategories
+                       on f.SubCategoryId equals s.SubCategoryId
+                       select new VFood
+                       {
+                           FoodId = f.FoodId,
+                           Name = f.Name,
+                           Price = f.Price,
+                           Image = f.Image,
+                           Description = f.Description,
+                           Content = f.Content,
+                           Status = f.Status,
+                           DateCreated = f.DateCreated,
+                           SubCategoryId = f.SubCategoryId,
+                           SubCategoryName = s.SubCategoryName
+                       };
+            return query.ToList();
         }
 
-        public async Task<VFood> GetById(string foodId)
+        public VFood GetById(string foodId)
         {
-            var food = await _context.Foods.FindAsync(Guid.Parse(foodId));
-            if (food == null)
+            var query = from f in _context.Foods
+                        join s in _context.SubCategories
+                        on f.SubCategoryId equals s.SubCategoryId
+                        select new VFood
+                        {
+                            FoodId = f.FoodId,
+                            Name = f.Name,
+                            Price = f.Price,
+                            Image = f.Image,
+                            Description = f.Description,
+                            Content = f.Content,
+                            Status = f.Status,
+                            DateCreated = f.DateCreated,
+                            SubCategoryId = f.SubCategoryId,
+                            SubCategoryName = s.SubCategoryName
+                        };
+            var vFood = query.Where(x=>x.FoodId == Guid.Parse(foodId)).FirstOrDefault();
+            if(vFood == null)
             {
-                throw new SnackShopException("Can not find food");
+                throw new SnackShopException("Can not find this food");
             }
-            return new VFood
-            {
-                FoodId = food.FoodId,
-                Name = food.Name,
-                Price = food.Price,
-                Image = food.Image,
-                Description = food.Description,
-                Content = food.Content,
-                Status = food.Status,
-                DateCreated = food.DateCreated
-            };
+            return vFood;
+
         }
 
         public List<VFood> GetBySubCategoryId(string subCategoryId)
         {
-            var foods = from x in _context.Foods
-                        where x.SubCategoryId == Guid.Parse(subCategoryId)
+            var query = from f in _context.Foods
+                        join s in _context.SubCategories
+                        on f.SubCategoryId equals s.SubCategoryId
                         select new VFood
                         {
-                            FoodId = x.FoodId,
-                            Name = x.Name,
-                            Price = x.Price,
-                            Image = x.Image,
-                            Description = x.Description,
-                            Content = x.Content,
-                            Status = x.Status,
-                            DateCreated = x.DateCreated,
-                            SubCategoryId = x.SubCategoryId
+                            FoodId = f.FoodId,
+                            Name = f.Name,
+                            Price = f.Price,
+                            Image = f.Image,
+                            Description = f.Description,
+                            Content = f.Content,
+                            Status = f.Status,
+                            DateCreated = f.DateCreated,
+                            SubCategoryId = f.SubCategoryId,
+                            SubCategoryName = s.SubCategoryName
                         };
-            return foods.ToList();
+            var vFoods = query.Where(x => x.SubCategoryId == Guid.Parse(subCategoryId)).ToList();
+            if (vFoods == null)
+            {
+                throw new SnackShopException("Can not find this food");
+            }
+            return vFoods;
         }
 
         public async Task<int> Update(FoodViewModel model)

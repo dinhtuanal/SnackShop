@@ -14,7 +14,8 @@ namespace BusinessLogicLayer.Interfaces
         public Task<int> Update(SubCategoryViewModel model);
         public Task<int> Delete(string subCategoryId);
         public List<VSubCategory> GetAll();
-        public Task<VSubCategory> GetById(string subCategoryId);
+        public VSubCategory GetById(string subCategoryId);
+        public Task<List<VSubCategory>> GetByCategoryId ( string categoryId);
 
     }
 }

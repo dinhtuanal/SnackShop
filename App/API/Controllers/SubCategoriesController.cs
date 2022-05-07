@@ -23,14 +23,9 @@ namespace API.Controllers
         }
         [HttpGet]
         [Route("{subCategoryId}")]
-        public async Task<IActionResult> GetById(string subCategoryId)
+        public VSubCategory GetById(string subCategoryId)
         {
-            var subCategory =  await _subCategoryService.GetById(subCategoryId);
-            if(subCategory == null)
-            {
-                return BadRequest(new ResponseResult(404));
-            }
-            return Ok(subCategory);
+            return _subCategoryService.GetById(subCategoryId);
         }
         [HttpPost]
         [Route("add")]
@@ -72,6 +67,13 @@ namespace API.Controllers
                 return Ok(new ResponseResult(200));
             }
             return BadRequest(400);
+        }
+        [HttpGet]
+        [Route("{categoryId}/subcategory")]
+        public async Task<List<VSubCategory>> GetByCategoryId(string categoryId)
+        {
+            return await _subCategoryService.GetByCategoryId(categoryId);
+            
         }
     }
 }

@@ -47,34 +47,66 @@ namespace BusinessLogicLayer.Implementations
 
         public List<VSubCategory> GetAll()
         {
-            var subCategories = _context.SubCategories.ToList();
-            var vSubCategories = subCategories.ConvertAll(s => new VSubCategory
-            {
-                SubCategoryId= s.SubCategoryId,
-                SubCategoryName= s.SubCategoryName,
-                Description= s.Description,
-                DateCreated= s.DateCreated,
-                Status=s.Status,
-                CategoryId=s.CategoryId
-            });
-            return vSubCategories;
+            var query = from s in _context.SubCategories
+                        join c in _context.Categories
+                        on s.CategoryId equals c.CategoryId
+                        select new VSubCategory
+                        {
+                            SubCategoryId = s.SubCategoryId,
+                            SubCategoryName = s.SubCategoryName,
+                            Description = s.Description,
+                            DateCreated = s.DateCreated,
+                            Status = s.Status,
+                            CategoryId = s.CategoryId,
+                            CategoryName = c.CategoryName
+                        };
+            return query.ToList();
         }
 
-        public async Task<VSubCategory> GetById(string subCategoryId)
+        public async Task<List<VSubCategory>> GetByCategoryId(string categoryId)
         {
-            var subCategory = await _context.SubCategories.FindAsync(Guid.Parse(subCategoryId));
-            if(subCategory == null)
+            var query = from s in _context.SubCategories
+                        join c in _context.Categories
+                        on s.CategoryId equals c.CategoryId
+                        select new VSubCategory
+                        {
+                            SubCategoryId = s.SubCategoryId,
+                            SubCategoryName = s.SubCategoryName,
+                            Description = s.Description,
+                            DateCreated = s.DateCreated,
+                            Status = s.Status,
+                            CategoryId = s.CategoryId,
+                            CategoryName = c.CategoryName
+                        };
+            var subCategories = query.Where(x=>x.CategoryId == Guid.Parse(categoryId)).ToList();
+            if (subCategories.Any())
             {
-                throw new SnackShopException("Can not find sub category");
+                return subCategories;
             }
-            return new VSubCategory {
-                SubCategoryId = subCategory.SubCategoryId,
-                SubCategoryName = subCategory.SubCategoryName,
-                Description = subCategory.Description,
-                DateCreated = subCategory.DateCreated,
-                Status = subCategory.Status,
-                CategoryId = subCategory.CategoryId
-            };
+            throw new SnackShopException("Can not find category id");
+        }
+
+        public VSubCategory GetById(string subCategoryId)
+        {
+            var query = from s in _context.SubCategories
+                        join c in _context.Categories
+                        on s.CategoryId equals c.CategoryId
+                        select new VSubCategory
+                        {
+                            SubCategoryId = s.SubCategoryId,
+                            SubCategoryName = s.SubCategoryName,
+                            Description = s.Description,
+                            DateCreated = s.DateCreated,
+                            Status = s.Status,
+                            CategoryId = s.CategoryId,
+                            CategoryName = c.CategoryName
+                        };
+            var vSubCategory = query.Where(s => s.SubCategoryId == Guid.Parse(subCategoryId)).FirstOrDefault();
+            if (vSubCategory == null)
+            {
+                throw new SnackShopException("Can not find this sub category");
+            }
+            return vSubCategory;
         }
 
         public async Task<int> Update(SubCategoryViewModel model)

@@ -18,5 +18,6 @@ namespace SharedObjects.ValueObjects
         public Status Status { get; set; } //Trạng thái còn hay hết
         public DateTime? DateCreated { get; set; }
         public Guid? SubCategoryId { get; set; } // Mã thể loại
+        public string SubCategoryName { get; set; }
     }
 }
