@@ -1,5 +1,5 @@
 ﻿@using SharedObjects.ValueObjects
-@model List<VCategory>
+@model List<VSubCategory>
 
 @{
     ViewData["Title"] = "Index";
@@ -8,23 +8,25 @@
     <title>Thể loại</title>
 }
 @section Breadcrumb{
-    <li class="breadcrumb-item active" aria-current="page">Thể loại</li>
+    <li class="breadcrumb-item active" aria-current="page">Thể loại phụ</li>
 }
 @section SlimPageTitle{
-    Thể loại
+    Thể loại phụ
 }
 <div class="section-wrapper mg-t-20">
-    <label class="section-title">Tất cả các thể loại</label>
-    <p class="mg-b-20 mg-sm-b-40">Hiễn thị theo id, tên, miêu tả</p>
+    <label class="section-title">Thể loại phụ</label>
+    <p class="mg-b-20 mg-sm-b-40"></p>
     <a data-toggle="modal" href="#model-add" data-id="" data-target="#model-add" class="btn btn-oblong btn-success mg-b-10">Thêm mới</a>
 
     <div class="table-responsive">
     <table class="table table-bordered mg-b-0 text-center">
         <thead>
         <tr>
-            <th>ID</th>
             <th>Tên</th>
             <th>Miêu tả</th>
+            <th>Ngày tạo</th>
+            <th>Trạng thái</th>
+            <th>Thể loại cha</th>
             <th>#</th>
         </tr>
         </thead>
@@ -32,9 +34,13 @@
         @foreach(var item in Model)
         {
         <tr>
-            <th scope="row">@item.CategoryId</th>
-            <td>@item.CategoryName</td>
+            <td>@item.SubCategoryName</td>
             <td>@item.Description</td>
+            <td>@item.DateCreated</td>
+            <td>
+                @item.Status
+            </td>
+            <td>@item.CategoryName</td>
             <td>
                 <a class="" data-toggle="modal" href="#model-add" data-id="" data-target="#model-add"><i class="fa fa-edit text-success"></i></a>
                 <a href=""><i class="fa fa-trash text-danger"></i></a>
@@ -46,7 +52,7 @@
     </div><!-- table-responsive -->
 </div>
 <!--Modal arear-->
-<div id="model-add" class="modal fade show mymodel" >
+<div id="model-add" class="modal fade show" >
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content tx-size-sm">
             <div class="modal-header pd-x-20">
@@ -57,7 +63,15 @@
             </div>
             <div class="modal-body pd-20">
                 <div class="form-group">
-                    <input class="form-control" type="text" name="category" value="Tên thể loại" placeholder="Vui lòng nhập tên thể loại" style="width: 700px">
+                    <input class="form-control" type="text" name="#" value="Tên thể loại phụ" placeholder="Vui lòng nhập tên thể loại" style="width: 700px">
+                    <textarea rows="6" class="form-control mt-3" type="text" name="#" value="Mô tả" placeholder="Vui lòng nhập tên thể loại" style="width: 700px"></textarea>
+                    <label for="categoryName"></label>
+                    <select class="form-control">
+                        <option value="1">Món ăn nhanh</option>
+                        <option value="2">Đồ uống</option>
+                        <option value="3">Trà sữa</option>
+                        <option value="4">Nước uống có ga</option>
+                    </select>
                 </div>
             </div><!-- modal-body -->
             <div class="modal-footer">

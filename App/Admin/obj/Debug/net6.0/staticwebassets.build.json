@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "QFXDqoKq0np118c7R5hkr9ZNHtOeObx+2BPgvnEKZP0=",
+  "Hash": "2KC4AcZPNeufeUAH6XvpVBvc1k75UaE2wJqSTdZubA0=",
   "Source": "Admin",
   "BasePath": "_content/Admin",
   "Mode": "Default",
@@ -49,6 +49,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "D:\\TaiLieu\\ASP Core\\Project\\SnackShop\\App\\Admin\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\Admin.bundle.scp.css"
+    },
+    {
+      "Identity": "D:\\TaiLieu\\ASP Core\\Project\\SnackShop\\App\\Admin\\wwwroot\\assets\\css\\mystyle.css",
+      "SourceId": "Admin",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\TaiLieu\\ASP Core\\Project\\SnackShop\\App\\Admin\\wwwroot\\",
+      "BasePath": "_content/Admin",
+      "RelativePath": "assets/css/mystyle.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\css\\mystyle.css"
     },
     {
       "Identity": "D:\\TaiLieu\\ASP Core\\Project\\SnackShop\\App\\Admin\\wwwroot\\assets\\css\\slim.css",

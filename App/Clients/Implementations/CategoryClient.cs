@@ -29,7 +29,7 @@ namespace Clients.Implementations
 
         public async Task<List<VCategory>> GetAll()
         {
-            var response = await httpClient.GetAsync("api/Categories");
+            var response = await httpClient.GetAsync("Categories");
             var content = await response.Content.ReadAsStringAsync();
             List<VCategory> result = JsonConvert.DeserializeObject<List<VCategory>>(content);
             return result;
@@ -37,7 +37,7 @@ namespace Clients.Implementations
 
         public async Task<VCategory> GetById(string categoryId)
         {
-            var response = await httpClient.GetAsync("api/categories/" + categoryId);
+            var response = await httpClient.GetAsync("categories/" + categoryId);
             string content = await response.Content.ReadAsStringAsync();
             VCategory result = JsonConvert.DeserializeObject<VCategory>(content);
             return result;
@@ -47,7 +47,7 @@ namespace Clients.Implementations
         {
             httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + token);
             StringContent content = new StringContent(JsonConvert.SerializeObject(model), Encoding.UTF8, "application/json");
-            var response = await httpClient.PutAsync("api/categories/update", content);
+            var response = await httpClient.PutAsync("categories/update", content);
             return (int)response.StatusCode;
         }
     }

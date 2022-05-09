@@ -78,7 +78,7 @@ namespace API.Controllers
         [Authorize(AuthenticationSchemes = "Bearer")]
         [Authorize(Roles = "admin")]
         [HttpGet]
-        [Route("{categoryId}/subcategory")]
+        [Route("{categoryId}/subcategories")]
         public async Task<List<VSubCategory>> GetByCategoryId(string categoryId)
         {
             return await _subCategoryService.GetByCategoryId(categoryId);

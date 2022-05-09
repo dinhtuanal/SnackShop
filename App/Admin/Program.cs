@@ -8,6 +8,8 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages().AddRazorRuntimeCompilation();
 
 builder.Services.AddTransient<ICategoryClient, CategoryClient>();
+builder.Services.AddTransient<ISubCategoryClient, SubCategoryClient>();
+builder.Services.AddTransient<IFoodClient,FoodClient>();
 
 var app = builder.Build();
 

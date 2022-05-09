@@ -11,13 +11,10 @@ namespace Admin.Controllers
         {
             _categoryClient = categoryClient;
         }
-        public IActionResult Index2()
-        {
-            return View();
-        }
         public async Task<IActionResult> Index(){
             List<VCategory> categories = await _categoryClient.GetAll();
             return View(categories);
         }
+
     }
 }

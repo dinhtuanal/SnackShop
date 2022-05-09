@@ -1,0 +1,51 @@
+﻿@using SharedObjects.ValueObjects
+@model List<VFood>
+
+@{
+    ViewData["Title"] = "Món ăn";
+}
+@section Title{
+    <title>Tất cả món ăn</title>
+}
+@section Breadcrumb{
+    <li class="breadcrumb-item active" aria-current="page">Món ăn</li>
+}
+@section SlimPageTitle{
+    Món ăn
+}
+<div class="section-wrapper mg-t-20">
+    <label class="section-title">Tất cả món ăn</label>
+    <p class="mg-b-20 mg-sm-b-40"></p>
+    <a data-toggle="modal" href="#model-add" data-id="" data-target="#model-add" class="btn btn-oblong btn-success mg-b-10">Thêm mới</a>
+
+    <div class="table-responsive">
+    <table class="table table-bordered mg-b-0 text-center">
+        <thead>
+        <tr>
+            <th>Tên</th>
+            <th>Giá</th>
+            <th>Ảnh đại diện</th>
+            <th>Trạng thái</th>
+            <th>Thuộc loại</th>
+            <th>#</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach(var item in Model)
+        {
+        <tr>
+            <td>@item.Name</td>
+            <td>@item.Price</td>
+            <td><img width="100" src="@item.Image" /></td>
+            <td>@item.Status</td>
+            <td>@item.SubCategoryName</td>
+            <td>
+                <a class="" data-toggle="modal" href="#model-add" data-id="" data-target="#model-add"><i class="fa fa-edit text-success"></i></a>
+                <a href=""><i class="fa fa-trash text-danger"></i></a>
+            </td>       
+        </tr>
+        }
+        </tbody>
+    </table>
+    </div><!-- table-responsive -->
+</div>

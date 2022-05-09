@@ -12,7 +12,7 @@ namespace Clients.Interfaces
         public BaseClient()
         {
             httpClient = new HttpClient();
-            httpClient.BaseAddress = new Uri("https://localhost:44332/");
+            httpClient.BaseAddress = new Uri("https://localhost:44332/api/");
         }
     }
 }
