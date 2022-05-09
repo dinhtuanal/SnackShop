@@ -66,7 +66,7 @@ namespace BusinessLogicLayer.Implementations
         public async Task<List<VSubCategory>> GetByCategoryId(string categoryId)
         {
             var categories = await _context.Categories.FindAsync(Guid.Parse(categoryId));
-            if(categories == null)
+            if (categories == null)
             {
                 throw new SnackShopException("Can not find subcategory with categoryid " + categoryId);
             }
@@ -85,7 +85,6 @@ namespace BusinessLogicLayer.Implementations
                         };
             var subCategories = query.Where(x => x.CategoryId == Guid.Parse(categoryId)).ToList();
             return subCategories;
-            
         }
 
         public async Task<VSubCategory> GetById(string subCategoryId)

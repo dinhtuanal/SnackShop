@@ -1,4 +1,5 @@
 ﻿using BusinessLogicLayer.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SharedObjects.Commons;
@@ -27,6 +28,8 @@ namespace API.Controllers
         {
             return await _categoryService.GetById(categoryId);
         }
+        [Authorize(AuthenticationSchemes = "Bearer")]
+        [Authorize(Roles = "admin")]
         [HttpPost]
         [Route("add")]
         public async Task<IActionResult> Add([FromBody]CategoryViewModel model)
@@ -42,6 +45,8 @@ namespace API.Controllers
             }
             return BadRequest(new ResponseResult(400));
         }
+        [Authorize(AuthenticationSchemes = "Bearer")]
+        [Authorize(Roles = "admin")]
         [HttpPut]
         [Route("update")]
         public async Task<IActionResult> Update([FromBody]CategoryViewModel model)
@@ -57,6 +62,8 @@ namespace API.Controllers
             }
             return BadRequest(new ResponseResult(400));
         }
+        [Authorize(AuthenticationSchemes = "Bearer")]
+        [Authorize(Roles = "admin")]
         [HttpDelete]
         [Route("delete/{categoryId}")]
         public async Task<IActionResult> Delete(string categoryId)

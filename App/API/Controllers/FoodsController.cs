@@ -1,4 +1,5 @@
 ﻿using BusinessLogicLayer.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SharedObjects.Commons;
@@ -29,6 +30,8 @@ namespace API.Controllers
         }
         [HttpPost]
         [Route("add")]
+        [Authorize(AuthenticationSchemes = "Bearer")]
+        [Authorize(Roles = "poster")]
         public async Task<IActionResult> Add([FromBody] FoodViewModel model)
         {
             if (!ModelState.IsValid)
@@ -44,6 +47,8 @@ namespace API.Controllers
         }
         [HttpPut]
         [Route("update")]
+        [Authorize(AuthenticationSchemes = "Bearer")]
+        [Authorize(Roles = "poster")]
         public async Task<IActionResult> Update([FromBody] FoodViewModel model)
         {
             if (!ModelState.IsValid)
@@ -57,6 +62,9 @@ namespace API.Controllers
             }
             return Ok(new ResponseResult(200));
         }
+
+        [Authorize(AuthenticationSchemes = "Bearer")]
+        [Authorize(Roles = "poster")]
         [HttpDelete]
         [Route("delete/{foodId}")]
         public async Task<IActionResult> Delete(string foodId)
