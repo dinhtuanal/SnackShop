@@ -1,0 +1,15 @@
+D:\TaiLieu\ASP Core\Project\SnackShop\App\Clients\bin\Debug\net6.0\Clients.deps.json
+D:\TaiLieu\ASP Core\Project\SnackShop\App\Clients\bin\Debug\net6.0\Clients.dll
+D:\TaiLieu\ASP Core\Project\SnackShop\App\Clients\bin\Debug\net6.0\Clients.pdb
+D:\TaiLieu\ASP Core\Project\SnackShop\App\Clients\bin\Debug\net6.0\SharedObjects.dll
+D:\TaiLieu\ASP Core\Project\SnackShop\App\Clients\bin\Debug\net6.0\SharedObjects.pdb
+D:\TaiLieu\ASP Core\Project\SnackShop\App\Clients\obj\Debug\net6.0\Clients.csproj.AssemblyReference.cache
+D:\TaiLieu\ASP Core\Project\SnackShop\App\Clients\obj\Debug\net6.0\Clients.GeneratedMSBuildEditorConfig.editorconfig
+D:\TaiLieu\ASP Core\Project\SnackShop\App\Clients\obj\Debug\net6.0\Clients.AssemblyInfoInputs.cache
+D:\TaiLieu\ASP Core\Project\SnackShop\App\Clients\obj\Debug\net6.0\Clients.AssemblyInfo.cs
+D:\TaiLieu\ASP Core\Project\SnackShop\App\Clients\obj\Debug\net6.0\Clients.csproj.CoreCompileInputs.cache
+D:\TaiLieu\ASP Core\Project\SnackShop\App\Clients\obj\Debug\net6.0\Clients.csproj.CopyComplete
+D:\TaiLieu\ASP Core\Project\SnackShop\App\Clients\obj\Debug\net6.0\Clients.dll
+D:\TaiLieu\ASP Core\Project\SnackShop\App\Clients\obj\Debug\net6.0\refint\Clients.dll
+D:\TaiLieu\ASP Core\Project\SnackShop\App\Clients\obj\Debug\net6.0\Clients.pdb
+D:\TaiLieu\ASP Core\Project\SnackShop\App\Clients\obj\Debug\net6.0\ref\Clients.dll

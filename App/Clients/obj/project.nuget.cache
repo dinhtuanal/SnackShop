@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "M9iOlIWE2UCEQ9XkPXKyttN7rDO5rx/spom1ZYBY6wrKy9zLwfyNSOtVSKOCbFqEewxDsgaeKvXO9cXvaW4Kzw==",
+  "success": true,
+  "projectFilePath": "D:\\TaiLieu\\ASP Core\\Project\\SnackShop\\App\\Clients\\Clients.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\HP\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -11,7 +11,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharedObjects", "SharedObje
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API", "API\API.csproj", "{74FECFDB-594D-4ADA-8E80-B3F719BBE903}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLogicLayer", "BusinessLogicLayer\BusinessLogicLayer.csproj", "{3DB92080-C2A9-4E1A-856B-F9443140C7A8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusinessLogicLayer", "BusinessLogicLayer\BusinessLogicLayer.csproj", "{3DB92080-C2A9-4E1A-856B-F9443140C7A8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Admin", "Admin\Admin.csproj", "{70F987F8-776E-42E6-A8EB-1459360C14E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clients", "Clients\Clients.csproj", "{D84902E0-E0B4-42EE-B582-8B66BB397555}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +43,14 @@ Global
 		{3DB92080-C2A9-4E1A-856B-F9443140C7A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3DB92080-C2A9-4E1A-856B-F9443140C7A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3DB92080-C2A9-4E1A-856B-F9443140C7A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70F987F8-776E-42E6-A8EB-1459360C14E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70F987F8-776E-42E6-A8EB-1459360C14E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70F987F8-776E-42E6-A8EB-1459360C14E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70F987F8-776E-42E6-A8EB-1459360C14E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D84902E0-E0B4-42EE-B582-8B66BB397555}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D84902E0-E0B4-42EE-B582-8B66BB397555}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D84902E0-E0B4-42EE-B582-8B66BB397555}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D84902E0-E0B4-42EE-B582-8B66BB397555}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
