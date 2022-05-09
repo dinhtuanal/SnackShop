@@ -23,7 +23,7 @@ namespace API.Controllers
         }
         [HttpGet]
         [Route("{subCategoryId}")]
-        public VSubCategory GetById(string subCategoryId)
+        public Task<VSubCategory> GetById(string subCategoryId)
         {
             return _subCategoryService.GetById(subCategoryId);
         }

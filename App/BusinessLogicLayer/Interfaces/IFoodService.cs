@@ -13,8 +13,8 @@ namespace BusinessLogicLayer.Interfaces
         public Task<int> Add(FoodViewModel model);
         public Task<int> Update(FoodViewModel model);
         public Task<int> Delete(string foodId);
-        public VFood GetById(string foodId);
+        public Task<VFood> GetById(string foodId);
         public List<VFood> GetAll();
-        public List<VFood> GetBySubCategoryId(string subCategoryId);
+        public Task<List<VFood>> GetBySubCategoryId(string subCategoryId);
     }
 }

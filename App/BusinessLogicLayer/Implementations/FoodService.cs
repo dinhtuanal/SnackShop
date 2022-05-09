@@ -68,8 +68,13 @@ namespace BusinessLogicLayer.Implementations
             return query.ToList();
         }
 
-        public VFood GetById(string foodId)
+        public async Task<VFood> GetById(string foodId)
         {
+            var food = await _context.Foods.FindAsync(Guid.Parse(foodId));
+            if (food == null)
+            {
+                throw new SnackShopException("Can not find this food ");
+            }
             var query = from f in _context.Foods
                         join s in _context.SubCategories
                         on f.SubCategoryId equals s.SubCategoryId
@@ -95,8 +100,13 @@ namespace BusinessLogicLayer.Implementations
 
         }
 
-        public List<VFood> GetBySubCategoryId(string subCategoryId)
+        public async Task<List<VFood>> GetBySubCategoryId(string subCategoryId)
         {
+            var subCategory = await _context.SubCategories.FindAsync(Guid.Parse(subCategoryId));
+            if(subCategory == null)
+            {
+                throw new SnackShopException("Can not find food with subcategory id: " +  subCategoryId);
+            }
             var query = from f in _context.Foods
                         join s in _context.SubCategories
                         on f.SubCategoryId equals s.SubCategoryId

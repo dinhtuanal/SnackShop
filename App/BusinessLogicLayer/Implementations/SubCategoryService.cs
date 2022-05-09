@@ -65,6 +65,11 @@ namespace BusinessLogicLayer.Implementations
 
         public async Task<List<VSubCategory>> GetByCategoryId(string categoryId)
         {
+            var categories = await _context.Categories.FindAsync(Guid.Parse(categoryId));
+            if(categories == null)
+            {
+                throw new SnackShopException("Can not find subcategory with categoryid " + categoryId);
+            }
             var query = from s in _context.SubCategories
                         join c in _context.Categories
                         on s.CategoryId equals c.CategoryId
@@ -78,16 +83,18 @@ namespace BusinessLogicLayer.Implementations
                             CategoryId = s.CategoryId,
                             CategoryName = c.CategoryName
                         };
-            var subCategories = query.Where(x=>x.CategoryId == Guid.Parse(categoryId)).ToList();
-            if (subCategories.Any())
-            {
-                return subCategories;
-            }
-            throw new SnackShopException("Can not find category id");
+            var subCategories = query.Where(x => x.CategoryId == Guid.Parse(categoryId)).ToList();
+            return subCategories;
+            
         }
 
-        public VSubCategory GetById(string subCategoryId)
+        public async Task<VSubCategory> GetById(string subCategoryId)
         {
+            var subCategories = await _context.SubCategories.FindAsync(Guid.Parse(subCategoryId));
+            if(subCategories == null)
+            {
+                throw new SnackShopException("Can not find subcategory with id: " + subCategoryId);
+            }
             var query = from s in _context.SubCategories
                         join c in _context.Categories
                         on s.CategoryId equals c.CategoryId
