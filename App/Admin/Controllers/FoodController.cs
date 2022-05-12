@@ -1,5 +1,6 @@
 ﻿using Clients.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using SharedObjects.ValueObjects;
 
 namespace Admin.Controllers
 {
@@ -14,6 +15,11 @@ namespace Admin.Controllers
         {
             var foods = await _foodClient.GetAll();
             return View(foods);
+        }
+        public async Task<IActionResult> Detail(string foodId)
+        {
+            VFood food = await _foodClient.GetById(foodId);
+            return View(food);
         }
     }
 }

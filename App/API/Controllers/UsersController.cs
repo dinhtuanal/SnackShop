@@ -29,6 +29,7 @@ namespace API.Controllers
         {
             return Ok(await userService.GetById(userId));
         }
+        [Authorize(Roles = "admin")]
         [HttpPost]
         [Route("add")]
         public async Task<IActionResult> Add(AddUserViewModel model)
@@ -44,6 +45,7 @@ namespace API.Controllers
             }
             return BadRequest(result);
         }
+        [Authorize(Roles = "admin")]
         [HttpPut]
         [Route("update")]
         public async Task<IActionResult> Update(UpdateUserViewModel model)
@@ -74,7 +76,7 @@ namespace API.Controllers
         [AllowAnonymous]
         [HttpPost]
         [Route("login")]
-        public async Task<IActionResult> Login(LoginViewModel model)
+        public async Task<IActionResult> Login([FromBody]LoginViewModel model)
         {
             if (!ModelState.IsValid)
             {

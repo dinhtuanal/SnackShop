@@ -15,12 +15,6 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
-
-builder.Services.AddEntityFrameworkSqlServer();
-builder.Services.AddDbContextPool<SnackShopDbContext>
-    (option => option.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
-builder.Services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<SnackShopDbContext>();
 builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new OpenApiInfo { Title = "Swagger eShop Solution", Version = "v1" });
@@ -54,6 +48,13 @@ builder.Services.AddSwaggerGen(c =>
                       }
                     });
 });
+
+builder.Services.AddEntityFrameworkSqlServer();
+builder.Services.AddDbContextPool<SnackShopDbContext>
+    (option => option.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+builder.Services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<SnackShopDbContext>();
+
+
 //Configuration password
 builder.Services.Configure<IdentityOptions>(options =>
 {
@@ -64,6 +65,10 @@ builder.Services.Configure<IdentityOptions>(options =>
     options.Password.RequireUppercase = false;
 });
 #region Add dependenceIjection
+builder.Services.AddTransient<UserManager<IdentityUser>, UserManager<IdentityUser>>();
+builder.Services.AddTransient<SignInManager<IdentityUser>, SignInManager<IdentityUser>>();
+builder.Services.AddTransient<RoleManager<IdentityRole>, RoleManager<IdentityRole>>();
+
 builder.Services.AddTransient<ICategoryService, CategoryService>();
 builder.Services.AddTransient<ISubCategoryService, SubCategoryService>();
 builder.Services.AddTransient<IFoodService, FoodService>();
@@ -100,10 +105,4 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-try
-{
-    app.Run();
-}catch (Exception ex)
-{
-    Console.WriteLine(ex.ToString());
-}
+app.Run();

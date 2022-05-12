@@ -1,0 +1,43 @@
+﻿@using Microsoft.AspNet.Identity.EntityFramework
+
+@{
+    ViewData["Title"] = "Tài khoản";
+}
+@section Breadcrumb{
+    <li class="breadcrumb-item active" aria-current="page">Tài khoản</li>
+}
+@section SlimPageTitle{
+    Tài khoản
+}
+@model List<IdentityUser>
+<div class="section-wrapper mg-t-20">
+    <label class="section-title">Tất cả món ăn</label>
+    <p class="mg-b-20 mg-sm-b-40"></p>
+    <a asp-controller="account" asp-action="add" class="btn btn-oblong btn-success mg-b-10">Thêm mới</a>
+
+    <div class="table-responsive">
+        <table class="table table-bordered mg-b-0 text-center">
+            <thead>
+                <tr>
+                    <th>Tên đăng nhập</th>
+                    <th>Email</th>
+                    <th>Số điện thoại</th>
+                    <th>Tác vụ</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.UserName</td>
+                        <td>@item.Email</td>
+                        <td>@item.PhoneNumber</td>
+                        <td><a  href="@Url.Action("update", "account", new {userId= @item.Id})"><i class="fa fa-edit text-success"></i></a>
+                <a href=""><i class="fa fa-trash text-danger"></i></a></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div><!-- table-responsive -->
+
+</div>

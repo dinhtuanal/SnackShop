@@ -70,34 +70,39 @@ namespace BusinessLogicLayer.Implementations
 
         public async Task<VFood> GetById(string foodId)
         {
-            var food = await _context.Foods.FindAsync(Guid.Parse(foodId));
-            if (food == null)
+            try
             {
-                throw new SnackShopException("Can not find this food ");
-            }
-            var query = from f in _context.Foods
-                        join s in _context.SubCategories
-                        on f.SubCategoryId equals s.SubCategoryId
-                        select new VFood
-                        {
-                            FoodId = f.FoodId,
-                            Name = f.Name,
-                            Price = f.Price,
-                            Image = f.Image,
-                            Description = f.Description,
-                            Content = f.Content,
-                            Status = f.Status,
-                            DateCreated = f.DateCreated,
-                            SubCategoryId = f.SubCategoryId,
-                            SubCategoryName = s.SubCategoryName
-                        };
-            var vFood = query.Where(x=>x.FoodId == Guid.Parse(foodId)).FirstOrDefault();
-            if(vFood == null)
+                var food = await _context.Foods.FindAsync(Guid.Parse(foodId));
+                if (food == null)
+                {
+                    throw new SnackShopException("Can not find this food ");
+                }
+                var query = from f in _context.Foods
+                            join s in _context.SubCategories
+                            on f.SubCategoryId equals s.SubCategoryId
+                            select new VFood
+                            {
+                                FoodId = f.FoodId,
+                                Name = f.Name,
+                                Price = f.Price,
+                                Image = f.Image,
+                                Description = f.Description,
+                                Content = f.Content,
+                                Status = f.Status,
+                                DateCreated = f.DateCreated,
+                                SubCategoryId = f.SubCategoryId,
+                                SubCategoryName = s.SubCategoryName
+                            };
+                var vFood = query.Where(x => x.FoodId == Guid.Parse(foodId)).FirstOrDefault();
+                if (vFood == null)
+                {
+                    throw new SnackShopException("Can not find this food");
+                }
+                return vFood;
+            }catch (Exception)
             {
-                throw new SnackShopException("Can not find this food");
+                throw new SnackShopException("Lỗi gì đó");
             }
-            return vFood;
-
         }
 
         public async Task<List<VFood>> GetBySubCategoryId(string subCategoryId)

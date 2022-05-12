@@ -34,13 +34,13 @@
         @foreach(var item in Model)
         {
         <tr>
-            <td>@item.Name</td>
+            <td><a href="@Url.Action("detail", "food", new {foodId = item.FoodId})" >@item.Name</a></td>
             <td>@item.Price</td>
             <td><img width="100" src="@item.Image" /></td>
             <td>@item.Status</td>
             <td>@item.SubCategoryName</td>
             <td>
-                <a class="" data-toggle="modal" href="#model-add" data-id="" data-target="#model-add"><i class="fa fa-edit text-success"></i></a>
+                <a  href="@Url.Action("update", "food", new {foodId = @item.FoodId})"><i class="fa fa-edit text-success"></i></a>
                 <a href=""><i class="fa fa-trash text-danger"></i></a>
             </td>       
         </tr>

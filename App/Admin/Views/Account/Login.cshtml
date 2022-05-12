@@ -1,0 +1,77 @@
+﻿@{
+    Layout = null;
+}
+@model SharedObjects.ViewModels.LoginViewModel
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Twitter -->
+    <meta name="twitter:site" content="@@themepixels">
+    <meta name="twitter:creator" content="@@themepixels">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Slim">
+    <meta name="twitter:description" content="Premium Quality and Responsive UI for Dashboard.">
+    <meta name="twitter:image" content="http://themepixels.me/sl">
+
+    <!-- Facebook -->
+    <meta property="og:url" content="http://themepixels.me/slim">
+    <meta property="og:title" content="Slim">
+    <meta property="og:description" content="Premium Quality and Responsive UI for Dashboard.">
+
+    <meta property="og:image" content="http://themepixels.me/slim/img/slim-social.png">
+    <meta property="og:image:secure_url" content="http://themepixels.me/slim/img/slim-social.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="600">
+
+    <!-- Meta -->
+    <meta name="description" content="Premium Quality and Responsive UI for Dashboard.">
+    <meta name="author" content="ThemePixels">
+
+    <title>Đăng nhập</title>
+
+    <!-- vendor css -->
+    <link href="~/assets/lib/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="~/assets/lib/Ionicons/css/ionicons.css" rel="stylesheet">
+    <link href="~/assets/lib/chartist/css/chartist.css" rel="stylesheet">
+    <link href="~/assets/lib/rickshaw/css/rickshaw.min.css" rel="stylesheet">
+
+    <!-- Slim CSS -->
+    <link rel="stylesheet" href="~/assets/css/slim.css">
+    <link rel="stylesheet" href="~/assets/css/mystyle.css" />
+
+
+</head>
+<body>
+    <div class="login-wrapper">
+        <form method="post" asp-controller="Account" asp-action="Login">
+            @Html.AntiForgeryToken()
+            <div class="card card-login shadow-base">
+                <div class="card-body pd-x-20 pd-xs-40">
+                    <h5 class="tx-xs-24 tx-normal tx-gray-900 mg-b-15">Đăng nhập để tiếp tục</h5>
+                    <p class="mg-b-30 tx-14">Bạn không có tài khoản? <a href="">Tạo mới tài khoản</a>, chỉ mất chưa đầy 1 phút.</p>
+                    <div asp-validation-summary="All" class="text-danger"></div>
+                    <div class="form-group">
+                        <input class="form-control" type="text" asp-for="Email" autocomplete="off" placeholder="Email">
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div><!-- form-group -->
+                    <div class="form-group">
+                        <input class="form-control" type="password" asp-for="Password" autocomplete="off" placeholder="Mật khẩu">
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div><!-- form-group -->
+                    <div class="form-group">
+                        <label for="remember">
+                            <input id="remember" class="form-checkbox" type="checkbox" name="Remember"> Ghi nhớ đăng nhập
+                        </label>
+                    </div><!-- form-group -->
+                    <button type="submit" class="btn btn-primary btn-block">Đăng nhập</button>
+                </div><!-- card-body -->
+            </div>
+        </form>
+    </div>
+</body>
+</html>

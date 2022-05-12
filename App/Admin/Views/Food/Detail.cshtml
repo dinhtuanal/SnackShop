@@ -1,0 +1,48 @@
+﻿@using SharedObjects.ValueObjects
+@model VFood
+
+@{
+    ViewData["Title"] = "Chi tiết món ăn";
+}
+@section Title{
+<title>Tất cả món ăn</title>
+}
+@section Breadcrumb{
+<li class="breadcrumb-item"><a asp-controller="Food" asp-action="Index">Tất cả món ăn</a></li>
+<li class="breadcrumb-item active" aria-current="page">@Model.Name</li>
+}
+@section SlimPageTitle{
+    Chi tiết món ăn
+}
+<div class="section-wrapper mg-t-20">
+    <label class="section-title">@Model.SubCategoryName</label>
+    <p class="mg-b-20 mg-sm-b-40"></p>
+    <a  href="@Url.Action("add", "food")" class="btn btn-oblong btn-success mg-b-10">Thêm mới</a>
+    <table class="table table-reference mb-3">
+        <thead>
+            <tr>
+                <th class="wd-40p">Tên</th>
+                <th class="wd-60p">Chi tiết</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Tên</td>
+                <td>@Model.Name</td>
+            </tr>
+            <tr>
+                <td>Ảnh</td>
+                <td class="text-center"><img width="400" src="@Model.Image" /></td>
+            </tr>
+            <tr>
+                <td>Giá</td>
+                <td>@Model.Price</td>
+            </tr>
+            <tr>
+                <td>Trạng thái</td>
+                <td>@Model.Status</td>
+            </tr>
+        </tbody>
+    </table>
+    <a href="@Url.Action("update", "food", new {foodId = @Model.FoodId})" class="btn btn-oblong btn-success mg-b-10">Cập nhật</a>
+</div>

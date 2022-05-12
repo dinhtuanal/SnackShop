@@ -11,9 +11,10 @@ namespace SharedObjects.ViewModels
     {
         [Required(ErrorMessage = "Tên người dùng không được để trống")]
         public string UserName { get; set; }
+        [Required(ErrorMessage ="Email không được để trống")]
         [EmailAddress(ErrorMessage = "Email không hợp lệ")]
         public string Email { get; set; }
-        [Required]
+        [Required(ErrorMessage ="Mật khẩu không được để trống")]
         public string PhoneNumber { get; set; }
         [Required(ErrorMessage = "Mật khẩu không được để trống")]
         public string Password { get; set; }

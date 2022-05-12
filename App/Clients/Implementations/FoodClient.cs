@@ -23,7 +23,7 @@ namespace Clients.Implementations
         public async Task<int> Delete(string foodId, string token)
         {
             httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + token);
-            var response = await httpClient.DeleteAsync("foods/delete/{foodId}");
+            var response = await httpClient.DeleteAsync("foods/delete/" + foodId);
             return (int)response.StatusCode;
         }
 
@@ -36,7 +36,7 @@ namespace Clients.Implementations
 
         public async Task<VFood> GetById(string foodId)
         {
-            var response = await httpClient.GetAsync("foods/{foodId}");
+            var response = await httpClient.GetAsync("foods/" + foodId);
             var content = await response.Content.ReadAsStringAsync();
             return JsonConvert.DeserializeObject<VFood>(content);
         }

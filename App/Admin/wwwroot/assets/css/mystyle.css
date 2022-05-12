@@ -1,3 +1,30 @@
 .mymodel{
     bottom: 500px;
 }
+.login-wrapper {
+    height: 100vh;
+    padding: 100px 0px;
+    /*background-image: linear-gradient(to right, #1b84e7 0%,#00ffff 40%,#1b84e7 75%, #1515af 100%);*/
+    background: url(../img/background.jpg) !important;
+    background-size: cover;
+    background-position: center;
+}
+.card-login {
+    width: 500px;
+    margin: 0px auto;
+    border-radius: 10px;
+}
+@media only screen and (min-width: 320px) {
+    .card-login {
+        width: 300px;
+        margin: 0px auto;
+        border-radius: 10px;
+    }
+}
+@media only screen and (min-width: 600px) {
+    .card-login {
+        width: 450px;
+        margin: 0px auto;
+        border-radius: 10px;
+    }
+}

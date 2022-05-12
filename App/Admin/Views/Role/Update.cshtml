@@ -1,0 +1,34 @@
+﻿@using SharedObjects.ViewModels
+@model RoleViewModel
+
+@{
+    ViewData["Title"] = "Cập nhật quyền";
+}
+@section Breadcrumb{
+<li class="breadcrumb-item active" aria-current="page">Quyền</li>
+}
+@section SlimPageTitle{
+    Quyền
+}
+<div class="section-wrapper mg-t-20">
+    <label class="section-title">Cập nhật</label>
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Update">
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <input hidden="hidden" asp-for="RoleId" class="form-control" />
+                <div class="form-group">
+                    <label asp-for="RoleName" class="control-label">Quyền</label>
+                    <input asp-for="RoleName" class="form-control" />
+                    <span asp-validation-for="RoleName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Save" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+    <div>
+        <a asp-action="Role">Trở về</a>
+    </div>
+</div>

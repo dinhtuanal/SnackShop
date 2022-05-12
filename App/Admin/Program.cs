@@ -1,5 +1,6 @@
 using Clients.Implementations;
 using Clients.Interfaces;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,9 +8,23 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages().AddRazorRuntimeCompilation();
 
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(option =>
+{
+
+    option.LoginPath = "/Account/Login";
+    option.LogoutPath = "/Account/Logout";
+    option.AccessDeniedPath = "/Home/AccessDenied";
+
+});
+
+#region DI
+builder.Services.AddTransient<IUserClient, UserClient>();
+builder.Services.AddTransient<IRoleClient, RoleClient>();
 builder.Services.AddTransient<ICategoryClient, CategoryClient>();
 builder.Services.AddTransient<ISubCategoryClient, SubCategoryClient>();
-builder.Services.AddTransient<IFoodClient,FoodClient>();
+builder.Services.AddTransient<IFoodClient, FoodClient>();
+#endregion
+
 
 var app = builder.Build();
 
@@ -25,6 +40,8 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+
+app.UseAuthentication();
 
 app.UseAuthorization();
 

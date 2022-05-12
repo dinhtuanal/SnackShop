@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "2KC4AcZPNeufeUAH6XvpVBvc1k75UaE2wJqSTdZubA0=",
+  "Hash": "2Mu8ECJV8n6YI0kLPKbQ969TNhDlbbMB2UyWsjdMOuM=",
   "Source": "Admin",
   "BasePath": "_content/Admin",
   "Mode": "Default",
@@ -151,6 +151,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\css\\slim.one.css"
+    },
+    {
+      "Identity": "D:\\TaiLieu\\ASP Core\\Project\\SnackShop\\App\\Admin\\wwwroot\\assets\\img\\background.jpg",
+      "SourceId": "Admin",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\TaiLieu\\ASP Core\\Project\\SnackShop\\App\\Admin\\wwwroot\\",
+      "BasePath": "_content/Admin",
+      "RelativePath": "assets/img/background.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\img\\background.jpg"
     },
     {
       "Identity": "D:\\TaiLieu\\ASP Core\\Project\\SnackShop\\App\\Admin\\wwwroot\\assets\\img\\icon1.svg",

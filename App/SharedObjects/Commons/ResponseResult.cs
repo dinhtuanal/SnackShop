@@ -11,6 +11,7 @@ namespace SharedObjects.Commons
         public int StatusCode { get; set; }
         public string Message { get; set; }
         public List<string> Errors { get; set; }
+        public ResponseResult() { }
         public ResponseResult(int statusCode)
         {
             StatusCode = statusCode;

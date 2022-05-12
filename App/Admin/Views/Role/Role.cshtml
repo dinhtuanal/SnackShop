@@ -1,0 +1,47 @@
+﻿@using Microsoft.AspNet.Identity.EntityFramework
+
+@{
+    ViewData["Title"] = "Tài khoản";
+}
+@section Breadcrumb{
+<li class="breadcrumb-item active" aria-current="page">Quyền</li>
+}
+@section SlimPageTitle{
+    Quyền
+}
+<div class="section-wrapper mg-t-20">
+    <label class="section-title">Quyền</label>
+    <p class="mg-b-20 mg-sm-b-40"></p>
+    <a asp-controller="role" asp-action="add" class="btn btn-oblong btn-success mg-b-10">Thêm mới</a>
+
+    <div class="table-responsive">
+        <table class="table table-bordered mg-b-0 text-center">
+            <thead>
+                <tr>
+                    <th>STT</th>
+                    <th>Quyền</th>
+                    <th>Tác vụ</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    int i = 1;
+
+                    <tr>
+                        <td>@i</td>
+                        <td>@item.Name</td>
+                        <td>
+                            <a href="@Url.Action("update", "role", new {roleId= @item.Id})"><i class="fa fa-edit text-success"></i></a>
+                            <a href=""><i class="fa fa-trash text-danger"></i></a>
+                        </td>
+                    </tr>
+
+                    i++;
+                }
+            </tbody>
+        </table>
+    </div><!-- table-responsive -->
+
+</div>
+

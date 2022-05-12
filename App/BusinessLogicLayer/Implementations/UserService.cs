@@ -57,7 +57,7 @@ namespace BusinessLogicLayer.Implementations
                 return new ResponseResult(200);
             }
             var errors = new List<string>();
-            foreach(var error in result.Errors)
+            foreach (var error in result.Errors)
             {
                 errors.Add(error.Description);
             }
@@ -126,7 +126,8 @@ namespace BusinessLogicLayer.Implementations
                         _configuration["Jwt:Audience"],
                         claimsIdentity.Claims,
                         expires: DateTime.UtcNow.AddDays(1),
-                        signingCredentials: signIn);
+                        signingCredentials: signIn
+                    );
                     string strToken = new JwtSecurityTokenHandler().WriteToken(token);
                     return new ResponseResult(200, strToken);
                 }
