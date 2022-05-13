@@ -1,7 +1,6 @@
 ﻿using Clients.Interfaces;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Logging;
 using Microsoft.IdentityModel.Tokens;
@@ -102,16 +101,28 @@ namespace Admin.Controllers
         }
         public async Task<IActionResult> Update(string userId)
         {
-            var token = User.GetSpecificClaim("token");
-            var user = await _userClient.GetById(userId, token);
-            UpdateUserViewModel model = new UpdateUserViewModel()
+            try
             {
-                UserId = user.Id,
-                UserName = user.UserName,
-                Email = user.Email,
-                PhoneNumber = user.PhoneNumber
-            };
-            return View(model);
+                var token = User.GetSpecificClaim("token");
+                var user = await _userClient.GetById(userId, token);
+                UpdateUserViewModel model = new UpdateUserViewModel()
+                {
+                    UserId = user.Id,
+                    UserName = user.UserName,
+                    Email = user.Email,
+                    PhoneNumber = user.PhoneNumber
+                };
+                return View(model);
+            }
+            catch (SnackShopException ex)
+            {
+                ViewBag.Error = ex.Message;
+                return View();
+            }catch(Exception ex)
+            {
+                ViewBag.Error = ex.Message;
+                return View();
+            }
         }
         [HttpPost]
         [ValidateAntiForgeryToken]

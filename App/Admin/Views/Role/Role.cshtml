@@ -24,9 +24,9 @@
                 </tr>
             </thead>
             <tbody>
+                @{int i = 1;}
                 @foreach (var item in Model)
                 {
-                    int i = 1;
 
                     <tr>
                         <td>@i</td>
@@ -37,7 +37,7 @@
                         </td>
                     </tr>
 
-                    i++;
+                    ++i;
                 }
             </tbody>
         </table>

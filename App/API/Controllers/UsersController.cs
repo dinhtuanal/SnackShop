@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using SharedObjects.Commons;
 using SharedObjects.ViewModels;
 
 namespace API.Controllers
@@ -27,7 +28,15 @@ namespace API.Controllers
         [Route("{userId}")]
         public async Task<IActionResult> GetById(string userId)
         {
-            return Ok(await userService.GetById(userId));
+            try
+            {
+                var user = await userService.GetById(userId);
+                return Ok(user); //json
+            }
+            catch (SnackShopException ex)
+            {
+                return BadRequest(ex.Message); //string
+            }
         }
         [Authorize(Roles = "admin")]
         [HttpPost]
@@ -76,7 +85,7 @@ namespace API.Controllers
         [AllowAnonymous]
         [HttpPost]
         [Route("login")]
-        public async Task<IActionResult> Login([FromBody]LoginViewModel model)
+        public async Task<IActionResult> Login([FromBody] LoginViewModel model)
         {
             if (!ModelState.IsValid)
             {

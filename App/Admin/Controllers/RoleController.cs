@@ -29,5 +29,26 @@ namespace Admin.Controllers
             };
             return View(model);
         }
+        public IActionResult Add() => View();
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Add(RoleViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+            string token = User.GetSpecificClaim("token");
+            var result = await _roleClient.Add(model, token);
+            if (result.StatusCode == 200)
+            {
+                return RedirectToAction("role");
+            }
+            foreach(var item in result.Errors)
+            {
+                ModelState.AddModelError(string.Empty,item);
+            }
+            return View(model);
+        }
     }
 }
