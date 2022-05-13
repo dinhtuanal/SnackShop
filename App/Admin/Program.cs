@@ -1,6 +1,7 @@
 using Clients.Implementations;
 using Clients.Interfaces;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,13 +11,11 @@ builder.Services.AddRazorPages().AddRazorRuntimeCompilation();
 
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(option =>
 {
-
     option.LoginPath = "/Account/Login";
     option.LogoutPath = "/Account/Logout";
     option.AccessDeniedPath = "/Home/AccessDenied";
 
 });
-
 #region DI
 builder.Services.AddTransient<IUserClient, UserClient>();
 builder.Services.AddTransient<IRoleClient, RoleClient>();

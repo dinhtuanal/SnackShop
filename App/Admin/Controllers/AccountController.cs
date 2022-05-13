@@ -1,6 +1,7 @@
 ﻿using Clients.Interfaces;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Logging;
 using Microsoft.IdentityModel.Tokens;
@@ -12,6 +13,7 @@ using System.Text;
 
 namespace Admin.Controllers
 {
+    [Authorize]
     public class AccountController : Controller
     {
         private readonly IUserClient _userClient;
@@ -21,9 +23,20 @@ namespace Admin.Controllers
             _userClient = userClient;
             _configuration = configuration;
         }
-        public IActionResult Login() => View();
+        [AllowAnonymous]
+        public async Task<IActionResult> Login()
+        {
+            var token = User.GetSpecificClaim("token");
+            var users = await _userClient.GetAll(token);
+            if (users != null)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+            return View();
+        }
         [ValidateAntiForgeryToken]
         [HttpPost]
+        [AllowAnonymous]
         public async Task<IActionResult> Login(LoginViewModel model)
         {
             if (!ModelState.IsValid)
@@ -49,6 +62,7 @@ namespace Admin.Controllers
                 ModelState.AddModelError(string.Empty, "Sai tên đăng nhập hoặc mật khẩu");
                 return View(model);
             }
+
         }
         private ClaimsPrincipal ValidateToken(string token)
         {
@@ -89,7 +103,7 @@ namespace Admin.Controllers
                 return View(model);
             }
             var result = await _userClient.Add(model, token);
-            if (result.StatusCode==200)
+            if (result.StatusCode == 200)
             {
                 return RedirectToAction("Account");
             }
@@ -118,7 +132,8 @@ namespace Admin.Controllers
             {
                 ViewBag.Error = ex.Message;
                 return View();
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 ViewBag.Error = ex.Message;
                 return View();
@@ -134,7 +149,7 @@ namespace Admin.Controllers
                 return View(model);
             }
             var token = User.GetSpecificClaim("token");
-            var result = await _userClient.Update(model,token);
+            var result = await _userClient.Update(model, token);
             if (result.StatusCode == 200)
             {
                 return RedirectToAction("account");

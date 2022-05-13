@@ -1,9 +1,11 @@
 ﻿using Clients.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using SharedObjects.ValueObjects;
 
 namespace Admin.Controllers
 {
+    [Authorize]
     public class CategoryController : Controller
     {
         private readonly ICategoryClient _categoryClient;

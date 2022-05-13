@@ -1,8 +1,10 @@
 ﻿using Clients.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Admin.Controllers
 {
+    [Authorize]
     public class SubCategoryController : Controller
     {
         private ISubCategoryClient _subCategoryClient;
