@@ -1,0 +1,59 @@
+﻿@model SharedObjects.ViewModels.CategoryViewModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+@section Title{
+<title>Xác nhận xóa</title>
+}
+@section Breadcrumb{
+<li class="breadcrumb-item active" aria-current="page">Xóa</li>
+}
+@section SlimPageTitle{
+    Xóa
+}
+
+<div class="section-wrapper mg-t-20">
+    <label class="section-title">Xác nhận xóa</label>
+    <div>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                Tên thể loại
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.CategoryName)
+            </dd>
+            <dt class="col-sm-2">
+                Mô tả
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Description)
+            </dd>
+            <dt class="col-sm-2">
+                Trạng thái
+            </dt>
+            <dd class="col-sm-10">
+                @if (Model.Status == 1)
+                {
+                    <label class="ckbox">
+                        <input type="checkbox" checked=""><span>Đã xác thực</span>
+                    </label>
+                }
+                else
+                {
+                    <label class="ckbox">
+                        <input type="checkbox" disabled=""><span>Chưa xác thực</span>
+                    </label>
+                }
+            </dd>
+        </dl>
+
+        <form asp-action="Delete">
+            <input asp-for="CategoryId" hidden="hidden" />
+
+            <input type="submit" value="Delete" class="btn btn-danger" /> |
+            <a asp-action="Index">Back to List</a>
+        </form>
+    </div>
+</div>

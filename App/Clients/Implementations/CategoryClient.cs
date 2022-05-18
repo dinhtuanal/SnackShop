@@ -23,7 +23,7 @@ namespace Clients.Implementations
         public async Task<int> Delete(string categoryId, string token)
         {
             httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + token);
-            var result = await httpClient.DeleteAsync("categories/{categoryId}");
+            var result = await httpClient.DeleteAsync("categories/delete/" + categoryId);
             return (int)result.StatusCode;
         }
 

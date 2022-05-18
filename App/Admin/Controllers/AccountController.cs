@@ -115,29 +115,16 @@ namespace Admin.Controllers
         }
         public async Task<IActionResult> Update(string userId)
         {
-            try
+            var token = User.GetSpecificClaim("token");
+            var user = await _userClient.GetById(userId, token);
+            UpdateUserViewModel model = new UpdateUserViewModel()
             {
-                var token = User.GetSpecificClaim("token");
-                var user = await _userClient.GetById(userId, token);
-                UpdateUserViewModel model = new UpdateUserViewModel()
-                {
-                    UserId = user.Id,
-                    UserName = user.UserName,
-                    Email = user.Email,
-                    PhoneNumber = user.PhoneNumber
-                };
-                return View(model);
-            }
-            catch (SnackShopException ex)
-            {
-                ViewBag.Error = ex.Message;
-                return View();
-            }
-            catch (Exception ex)
-            {
-                ViewBag.Error = ex.Message;
-                return View();
-            }
+                UserId = user.Id,
+                UserName = user.UserName,
+                Email = user.Email,
+                PhoneNumber = user.PhoneNumber
+            };
+            return View(model);
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
