@@ -47,6 +47,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcVXBkYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/TaiLieu/ASP Core/Project/SnackShop/App/Admin/Views/Food/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9vZFxBZGQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/TaiLieu/ASP Core/Project/SnackShop/App/Admin/Views/Food/Detail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9vZFxEZXRhaWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -65,6 +69,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/TaiLieu/ASP Core/Project/SnackShop/App/Admin/Views/Role/Add.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sZVxBZGQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/TaiLieu/ASP Core/Project/SnackShop/App/Admin/Views/Role/GetAll_Pta.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sZVxHZXRBbGxfUHRhLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/TaiLieu/ASP Core/Project/SnackShop/App/Admin/Views/Role/Role.cshtml]

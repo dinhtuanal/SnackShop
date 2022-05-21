@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "2Mu8ECJV8n6YI0kLPKbQ969TNhDlbbMB2UyWsjdMOuM=",
+  "Hash": "VR8lBl1NBRXygUPAixVABA10psCD3D6oNuBLwZWu3XI=",
   "Source": "Admin",
   "BasePath": "_content/Admin",
   "Mode": "Default",
@@ -1307,6 +1307,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\js\\widgets.js"
+    },
+    {
+      "Identity": "D:\\TaiLieu\\ASP Core\\Project\\SnackShop\\App\\Admin\\wwwroot\\assets\\lib\\bootbox\\bootbox.min.js",
+      "SourceId": "Admin",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\TaiLieu\\ASP Core\\Project\\SnackShop\\App\\Admin\\wwwroot\\",
+      "BasePath": "_content/Admin",
+      "RelativePath": "assets/lib/bootbox/bootbox.min.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\lib\\bootbox\\bootbox.min.js"
     },
     {
       "Identity": "D:\\TaiLieu\\ASP Core\\Project\\SnackShop\\App\\Admin\\wwwroot\\assets\\lib\\bootstrap\\css\\bootstrap.css",
@@ -11679,6 +11696,23 @@
       "OriginalItemSpec": "wwwroot\\assets\\lib\\jquery\\js\\jquery.js"
     },
     {
+      "Identity": "D:\\TaiLieu\\ASP Core\\Project\\SnackShop\\App\\Admin\\wwwroot\\assets\\lib\\jquery\\js\\jquery.min.js",
+      "SourceId": "Admin",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\TaiLieu\\ASP Core\\Project\\SnackShop\\App\\Admin\\wwwroot\\",
+      "BasePath": "_content/Admin",
+      "RelativePath": "assets/lib/jquery/js/jquery.min.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\lib\\jquery\\js\\jquery.min.js"
+    },
+    {
       "Identity": "D:\\TaiLieu\\ASP Core\\Project\\SnackShop\\App\\Admin\\wwwroot\\assets\\lib\\jquery-toggles\\css\\toggles-full.css",
       "SourceId": "Admin",
       "SourceType": "Discovered",
@@ -13105,6 +13139,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "D:\\TaiLieu\\ASP Core\\Project\\SnackShop\\App\\Admin\\wwwroot\\js\\food.js",
+      "SourceId": "Admin",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\TaiLieu\\ASP Core\\Project\\SnackShop\\App\\Admin\\wwwroot\\",
+      "BasePath": "_content/Admin",
+      "RelativePath": "js/food.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\food.js"
+    },
+    {
+      "Identity": "D:\\TaiLieu\\ASP Core\\Project\\SnackShop\\App\\Admin\\wwwroot\\js\\role.js",
+      "SourceId": "Admin",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\TaiLieu\\ASP Core\\Project\\SnackShop\\App\\Admin\\wwwroot\\",
+      "BasePath": "_content/Admin",
+      "RelativePath": "js/role.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\role.js"
     },
     {
       "Identity": "D:\\TaiLieu\\ASP Core\\Project\\SnackShop\\App\\Admin\\wwwroot\\js\\site.js",

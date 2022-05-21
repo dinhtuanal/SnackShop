@@ -4,7 +4,7 @@
     ViewData["Title"] = "Tài khoản";
 }
 @section Breadcrumb{
-    <li class="breadcrumb-item active" aria-current="page">Tài khoản</li>
+<li class="breadcrumb-item active" aria-current="page">Tài khoản</li>
 }
 @section SlimPageTitle{
     Tài khoản
@@ -32,8 +32,10 @@
                         <td>@item.UserName</td>
                         <td>@item.Email</td>
                         <td>@item.PhoneNumber</td>
-                        <td><a  href="@Url.Action("update", "account", new {userId= @item.Id})"><i class="fa fa-edit text-success"></i></a>
-                <a href=""><i class="fa fa-trash text-danger"></i></a></td>
+                        <td>
+                            <a href="@Url.Action("update", "account", new {userId= @item.Id})"><i class="fa fa-edit text-success"></i></a>
+                            <a data-toggle="modal" data-target="#btn-delete" href=""><i class="fa fa-trash text-danger"></i></a>
+                        </td>
                     </tr>
                 }
             </tbody>

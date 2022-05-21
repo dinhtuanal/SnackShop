@@ -8,14 +8,21 @@ namespace Admin.Controllers
     public class SubCategoryController : Controller
     {
         private ISubCategoryClient _subCategoryClient;
-        public SubCategoryController(ISubCategoryClient subCategoryClient)
+        private ICategoryClient _categoryClient;
+        public SubCategoryController(ISubCategoryClient subCategoryClient, ICategoryClient categoryClient)
         {
             _subCategoryClient = subCategoryClient;
+            _categoryClient = categoryClient;
         }
         public async Task<IActionResult> Index()
         {
             var subcategories = await _subCategoryClient.GetAll();
             return View(subcategories);
+        }
+        public async Task<IActionResult> Add()
+        {
+            var categories = await _categoryClient.GetAll();
+            return View(categories);
         }
     }
 }

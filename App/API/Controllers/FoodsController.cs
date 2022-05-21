@@ -31,7 +31,7 @@ namespace API.Controllers
         [HttpPost]
         [Route("add")]
         [Authorize(AuthenticationSchemes = "Bearer")]
-        [Authorize(Roles = "poster")]
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> Add([FromBody] FoodViewModel model)
         {
             if (!ModelState.IsValid)
@@ -41,14 +41,14 @@ namespace API.Controllers
             var result = await _foodService.Add(model);
             if (result != 0)
             {
-                return BadRequest(new ResponseResult(400));
+                return Ok(new ResponseResult(200));
             }
-            return Ok(new ResponseResult(200));
+            return BadRequest(new ResponseResult(400));
         }
         [HttpPut]
         [Route("update")]
         [Authorize(AuthenticationSchemes = "Bearer")]
-        [Authorize(Roles = "poster")]
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> Update([FromBody] FoodViewModel model)
         {
             if (!ModelState.IsValid)
@@ -58,13 +58,13 @@ namespace API.Controllers
             var result = await _foodService.Update(model);
             if (result != 0)
             {
-                return BadRequest(new ResponseResult(400));
+                return Ok(new ResponseResult(200));
             }
-            return Ok(new ResponseResult(200));
+            return BadRequest(new ResponseResult(400));
         }
 
         [Authorize(AuthenticationSchemes = "Bearer")]
-        [Authorize(Roles = "poster")]
+        [Authorize(Roles = "admin")]
         [HttpDelete]
         [Route("delete/{foodId}")]
         public async Task<IActionResult> Delete(string foodId)

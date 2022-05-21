@@ -1,5 +1,11 @@
-.mymodel{
-    bottom: 500px;
+.mymodal{
+    bottom: auto;
+}
+.error {
+    color: red;
+}
+.modal-dialog {
+    min-width: 500px;
 }
 .login-wrapper {
     height: 100vh;

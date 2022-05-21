@@ -1,0 +1,20 @@
+﻿@model List<Microsoft.AspNet.Identity.EntityFramework.IdentityRole>
+@for (var i = 0; i < Model.Count; i++)
+{
+    int stt = i + 1;
+    <tr id="tr-@Model[i].Id">
+        <td>@stt</td>
+        <td>@Model[i].Name</td>
+        <td>
+            @if (Model[i].Name.Equals("admin"))
+            {
+
+            }
+            else
+            {
+                <a class="update" data-toggle="modal" href="#modal-add" data-id="@Model[i].Id" title="Cập nhật"><i class="fa fa-edit text-success"></i></a>
+                <a class="delete" href="" data-id="@Model[i].Id"><i class="fa fa-trash text-danger"></i></a>
+            }
+        </td>
+    </tr>
+}

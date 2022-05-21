@@ -1,6 +1,4 @@
-﻿@using Microsoft.AspNet.Identity.EntityFramework
-
-@{
+﻿@{
     ViewData["Title"] = "Tài khoản";
 }
 @section Breadcrumb{
@@ -9,10 +7,14 @@
 @section SlimPageTitle{
     Quyền
 }
+@section Script{
+<script src="~/js/role.js"></script>
+}
+
 <div class="section-wrapper mg-t-20">
     <label class="section-title">Quyền</label>
     <p class="mg-b-20 mg-sm-b-40"></p>
-    <a asp-controller="role" asp-action="add" class="btn btn-oblong btn-success mg-b-10">Thêm mới</a>
+    <a data-toggle="modal" href="#modal-add" title="Cập nhật" class="btn btn-oblong btn-success mg-b-10 add">Thêm mới</a>
 
     <div class="table-responsive">
         <table class="table table-bordered mg-b-0 text-center">
@@ -23,25 +25,35 @@
                     <th>Tác vụ</th>
                 </tr>
             </thead>
-            <tbody>
-                @{int i = 1;}
-                @foreach (var item in Model)
-                {
-
-                    <tr>
-                        <td>@i</td>
-                        <td>@item.Name</td>
-                        <td>
-                            <a href="@Url.Action("update", "role", new {roleId= @item.Id})"><i class="fa fa-edit text-success"></i></a>
-                            <a href=""><i class="fa fa-trash text-danger"></i></a>
-                        </td>
-                    </tr>
-
-                    ++i;
-                }
+            <tbody id="table-content">
+                @*GetAll_Pta*@
             </tbody>
         </table>
     </div><!-- table-responsive -->
 
 </div>
-
+<div id="modal-add" class="modal fade mymodal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content bd-0 tx-14">
+            <div class="modal-header">
+                <h6 class="tx-14 mg-b-0 tx-uppercase tx-inverse tx-bold">Thêm, Cập nhật quyền</h6>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <p hidden id="hid-id"></p>
+            </div>
+            <div class="modal-body pd-25">
+                <form id="frm-save">
+                    <div class="form-group">
+                        <label for="txt-CourseName">Tên quyền</label>
+                        <input type="text" class="form-control" id="txt-RoleName" name="RoleName" style="color:mediumvioletred">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary save">Save changes</button>
+            </div>
+        </div>
+    </div><!-- modal-dialog -->
+</div><!-- modal -->

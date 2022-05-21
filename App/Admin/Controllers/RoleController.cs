@@ -14,43 +14,49 @@ namespace Admin.Controllers
         {
             _roleClient = roleClient;
         }
-        public async Task<IActionResult> Role()
+        public IActionResult Role()
+        {
+            return View();
+        }
+        public async Task<IActionResult> GetAll_Pta()
+        {
+            var token = User.GetSpecificClaim("token");
+            var result = await _roleClient.GetAll(token);
+            return PartialView(result);
+        }
+        public async Task<JsonResult> Delete(string id)
         {
             string token = User.GetSpecificClaim("token");
-            var roles = await _roleClient.GetAll(token);
-            return View(roles);
+            var result = await _roleClient.Delete(id, token);
+            return Json(new { statusCode = result });
         }
-        public async Task<IActionResult> Update(string roleId)
-        {
-            string token = User.GetSpecificClaim("token");
-            var role = await _roleClient.GetById(roleId, token);
-            RoleViewModel model = new RoleViewModel()
-            {
-                RoleId = role.Id,
-                RoleName = role.Name,
-            };
-            return View(model);
-        }
-        public IActionResult Add() => View();
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Add(RoleViewModel model)
+        public async Task<IActionResult> Save([FromBody] RoleViewModel model)
         {
-            if (!ModelState.IsValid)
-            {
-                return View(model);
-            }
             string token = User.GetSpecificClaim("token");
-            var result = await _roleClient.Add(model, token);
-            if (result.StatusCode == 200)
+            int result;
+            if (string.IsNullOrEmpty(model.RoleId))
             {
-                return RedirectToAction("role");
+                result = (await _roleClient.Add(model, token)).StatusCode;
+                if(result == 200)
+                {
+                    return Json(new { statusCode = 1 });
+                }
+                return Json(new { statusCode = 0 });
             }
-            foreach(var item in result.Errors)
+            result = (await _roleClient.Update(model,token)).StatusCode;
+            if(result == 200)
             {
-                ModelState.AddModelError(string.Empty,item);
+                return Json(new { statusCode = 2 });
             }
-            return View(model);
+            return Json(new { statusCode = 0 });
         }
+        public async Task<JsonResult> GetById(string id)
+        {
+            string token = User.GetSpecificClaim("token");
+            var role = await _roleClient.GetById(id,token);
+            return Json(new { result = role });
+        }
+        
     }
 }

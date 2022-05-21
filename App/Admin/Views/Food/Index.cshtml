@@ -13,10 +13,13 @@
 @section SlimPageTitle{
     Món ăn
 }
+@section Script{
+    <script src="~/js/food.js"></script>
+}
 <div class="section-wrapper mg-t-20">
     <label class="section-title">Tất cả món ăn</label>
     <p class="mg-b-20 mg-sm-b-40"></p>
-    <a data-toggle="modal" href="#model-add" data-id="" data-target="#model-add" class="btn btn-oblong btn-success mg-b-10">Thêm mới</a>
+    <a href="@Url.Action("add", "food", new {foodId = ""})" class="btn btn-oblong btn-success mg-b-10 add">Thêm mới</a>
 
     <div class="table-responsive">
     <table class="table table-bordered mg-b-0 text-center">
@@ -40,8 +43,8 @@
             <td>@item.Status</td>
             <td>@item.SubCategoryName</td>
             <td>
-                <a  href="@Url.Action("update", "food", new {foodId = @item.FoodId})"><i class="fa fa-edit text-success"></i></a>
-                <a href=""><i class="fa fa-trash text-danger"></i></a>
+                <a id="btn-update" href="@Url.Action("add", "food", new {foodId = @item.FoodId})"><i class="fa fa-edit text-success"></i></a>
+                <a class="delete" data-id="@item.FoodId" href=""><i class="fa fa-trash text-danger"></i></a>
             </td>       
         </tr>
         }
