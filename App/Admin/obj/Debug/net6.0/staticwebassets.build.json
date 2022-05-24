@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "VR8lBl1NBRXygUPAixVABA10psCD3D6oNuBLwZWu3XI=",
+  "Hash": "VnnouMpCNoSsCA4NSfMC38+2HgKP4NtK7jKTplUWrHM=",
   "Source": "Admin",
   "BasePath": "_content/Admin",
   "Mode": "Default",
@@ -11679,6 +11679,23 @@
       "OriginalItemSpec": "wwwroot\\assets\\lib\\jquery.steps\\js\\jquery.steps.js"
     },
     {
+      "Identity": "D:\\TaiLieu\\ASP Core\\Project\\SnackShop\\App\\Admin\\wwwroot\\assets\\lib\\jquery.twbsPagination.min.js",
+      "SourceId": "Admin",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\TaiLieu\\ASP Core\\Project\\SnackShop\\App\\Admin\\wwwroot\\",
+      "BasePath": "_content/Admin",
+      "RelativePath": "assets/lib/jquery.twbsPagination.min.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\lib\\jquery.twbsPagination.min.js"
+    },
+    {
       "Identity": "D:\\TaiLieu\\ASP Core\\Project\\SnackShop\\App\\Admin\\wwwroot\\assets\\lib\\jquery\\js\\jquery.js",
       "SourceId": "Admin",
       "SourceType": "Discovered",
@@ -13141,6 +13158,23 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
+      "Identity": "D:\\TaiLieu\\ASP Core\\Project\\SnackShop\\App\\Admin\\wwwroot\\js\\account.js",
+      "SourceId": "Admin",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\TaiLieu\\ASP Core\\Project\\SnackShop\\App\\Admin\\wwwroot\\",
+      "BasePath": "_content/Admin",
+      "RelativePath": "js/account.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\account.js"
+    },
+    {
       "Identity": "D:\\TaiLieu\\ASP Core\\Project\\SnackShop\\App\\Admin\\wwwroot\\js\\food.js",
       "SourceId": "Admin",
       "SourceType": "Discovered",
@@ -13156,6 +13190,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\food.js"
+    },
+    {
+      "Identity": "D:\\TaiLieu\\ASP Core\\Project\\SnackShop\\App\\Admin\\wwwroot\\js\\foodpagination.js",
+      "SourceId": "Admin",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\TaiLieu\\ASP Core\\Project\\SnackShop\\App\\Admin\\wwwroot\\",
+      "BasePath": "_content/Admin",
+      "RelativePath": "js/foodpagination.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\foodpagination.js"
     },
     {
       "Identity": "D:\\TaiLieu\\ASP Core\\Project\\SnackShop\\App\\Admin\\wwwroot\\js\\role.js",
@@ -13190,6 +13241,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\site.js"
+    },
+    {
+      "Identity": "D:\\TaiLieu\\ASP Core\\Project\\SnackShop\\App\\Admin\\wwwroot\\js\\subcategory.js",
+      "SourceId": "Admin",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\TaiLieu\\ASP Core\\Project\\SnackShop\\App\\Admin\\wwwroot\\",
+      "BasePath": "_content/Admin",
+      "RelativePath": "js/subcategory.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\subcategory.js"
     },
     {
       "Identity": "D:\\TaiLieu\\ASP Core\\Project\\SnackShop\\App\\Admin\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",

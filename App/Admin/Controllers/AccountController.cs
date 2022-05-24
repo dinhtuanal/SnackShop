@@ -148,5 +148,12 @@ namespace Admin.Controllers
             ModelState.AddModelError(string.Empty, "Đã xảy ra lỗi");
             return View(model);
         }
+
+        public async Task<IActionResult> Delete(string userId)
+        {
+            var token = User.GetSpecificClaim("token");
+            var result = await _userClient.Delete(userId, token);
+            return Json(new { statusCode = result });
+        }
     }
 }

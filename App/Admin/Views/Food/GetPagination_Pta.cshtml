@@ -1,0 +1,19 @@
+﻿@using SharedObjects.ValueObjects
+@model List<VFood>
+
+@foreach (var item in Model)
+{
+    {
+        <tr>
+            <td><a href="@Url.Action("detail", "food", new {foodId = item.FoodId})">@item.Name</a></td>
+            <td>@item.Price</td>
+            <td><img width="100" src="@item.Image" /></td>
+            <td>@item.Status</td>
+            <td>@item.SubCategoryName</td>
+            <td>
+                <a id="btn-update" href="@Url.Action("add", "food", new {foodId = @item.FoodId})"><i class="fa fa-edit text-success"></i></a>
+                <a class="delete" data-id="@item.FoodId" href=""><i class="fa fa-trash text-danger"></i></a>
+            </td>
+        </tr>
+    }
+}

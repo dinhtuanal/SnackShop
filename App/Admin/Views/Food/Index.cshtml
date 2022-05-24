@@ -5,16 +5,17 @@
     ViewData["Title"] = "Món ăn";
 }
 @section Title{
-    <title>Tất cả món ăn</title>
+<title>Tất cả món ăn</title>
 }
 @section Breadcrumb{
-    <li class="breadcrumb-item active" aria-current="page">Món ăn</li>
+<li class="breadcrumb-item active" aria-current="page">Món ăn</li>
 }
 @section SlimPageTitle{
     Món ăn
 }
 @section Script{
-    <script src="~/js/food.js"></script>
+<script src="~/js/foodpagination.js"></script>
+<script src="~/js/food.js"></script>
 }
 <div class="section-wrapper mg-t-20">
     <label class="section-title">Tất cả món ăn</label>
@@ -22,33 +23,24 @@
     <a href="@Url.Action("add", "food", new {foodId = ""})" class="btn btn-oblong btn-success mg-b-10 add">Thêm mới</a>
 
     <div class="table-responsive">
-    <table class="table table-bordered mg-b-0 text-center">
-        <thead>
-        <tr>
-            <th>Tên</th>
-            <th>Giá</th>
-            <th>Ảnh đại diện</th>
-            <th>Trạng thái</th>
-            <th>Thuộc loại</th>
-            <th>#</th>
-        </tr>
-        </thead>
-        <tbody>
-        @foreach(var item in Model)
-        {
-        <tr>
-            <td><a href="@Url.Action("detail", "food", new {foodId = item.FoodId})" >@item.Name</a></td>
-            <td>@item.Price</td>
-            <td><img width="100" src="@item.Image" /></td>
-            <td>@item.Status</td>
-            <td>@item.SubCategoryName</td>
-            <td>
-                <a id="btn-update" href="@Url.Action("add", "food", new {foodId = @item.FoodId})"><i class="fa fa-edit text-success"></i></a>
-                <a class="delete" data-id="@item.FoodId" href=""><i class="fa fa-trash text-danger"></i></a>
-            </td>       
-        </tr>
-        }
-        </tbody>
-    </table>
+        <table class="table table-bordered mg-b-0 text-center">
+            <thead>
+                <tr>
+                    <th>Tên</th>
+                    <th>Giá</th>
+                    <th>Ảnh đại diện</th>
+                    <th>Trạng thái</th>
+                    <th>Thuộc loại</th>
+                    <th>#</th>
+                </tr>
+            </thead>
+            <tbody id="table-content">
+
+                @*GetPagination_Pta*@
+
+            </tbody>
+        </table>
+        <div class="pagination mt-3" id="pagination">
+        </div>
     </div><!-- table-responsive -->
 </div>

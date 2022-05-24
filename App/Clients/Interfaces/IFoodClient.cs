@@ -16,5 +16,8 @@ namespace Clients.Interfaces
         public Task<VFood> GetById(string foodId);
         public Task<List<VFood>> GetAll();
         public Task<List<VFood>> GetBySubCategoryId(string subCategoryId);
+        public Task<int> CountPagination();
+        public Task<List<VFood>> GetPagination(PageViewModel page);
+
     }
 }

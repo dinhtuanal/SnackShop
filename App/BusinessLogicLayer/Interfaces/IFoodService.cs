@@ -16,5 +16,7 @@ namespace BusinessLogicLayer.Interfaces
         public Task<VFood> GetById(string foodId);
         public List<VFood> GetAll();
         public Task<List<VFood>> GetBySubCategoryId(string subCategoryId);
+        public int CountPagination();
+        public List<VFood> GetPagination(PageViewModel model);
     }
 }

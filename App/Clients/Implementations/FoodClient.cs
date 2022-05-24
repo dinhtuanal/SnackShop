@@ -20,6 +20,14 @@ namespace Clients.Implementations
             return (int)response.StatusCode;
         }
 
+        public async Task<int> CountPagination()
+        {
+            var responseMessage = await httpClient.GetAsync("foods/count-pagination");
+            var response = await responseMessage.Content.ReadAsStringAsync();
+            var responseResult = JsonConvert.DeserializeObject<int>(response);
+            return responseResult;
+        }
+
         public async Task<int> Delete(string foodId, string token)
         {
             httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + token);
@@ -46,6 +54,15 @@ namespace Clients.Implementations
             var response = await httpClient.GetAsync("foods/{subCategoryId}/subcategories");
             var content = await response.Content.ReadAsStringAsync();
             return JsonConvert.DeserializeObject<List<VFood>>(content);
+        }
+
+        public async Task<List<VFood>> GetPagination(PageViewModel page)
+        {
+            StringContent content = new StringContent(JsonConvert.SerializeObject(page), Encoding.UTF8, "application/json");
+            var responseMessage = await httpClient.PostAsync("foods/get-pagination", content);
+            var response = await responseMessage.Content.ReadAsStringAsync();
+            var responseResult = JsonConvert.DeserializeObject<List<VFood>>(response);
+            return responseResult;
         }
 
         public async Task<int> Update(FoodViewModel model, string token)

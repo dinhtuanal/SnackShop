@@ -24,8 +24,6 @@ namespace Data.Configurations
                 .WithMany(f => f.Foods)
                 .HasForeignKey(s => s.SubCategoryId)
                 .HasConstraintName("FK_Foods_SubCategories");
-
-
         }
     }
 }

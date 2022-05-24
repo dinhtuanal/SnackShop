@@ -70,7 +70,7 @@ namespace API.Controllers
         public async Task<IActionResult> Delete(string foodId)
         {
             var result = await _foodService.Delete(foodId);
-            if(result != 0)
+            if (result != 0)
             {
                 return BadRequest(new ResponseResult(400));
             }
@@ -81,6 +81,18 @@ namespace API.Controllers
         public async Task<List<VFood>> GetBySubCategoryId(string subCategoryId)
         {
             return await _foodService.GetBySubCategoryId(subCategoryId);
+        }
+        [HttpPost]
+        [Route("get-pagination")]
+        public List<VFood> GetPagination(PageViewModel model)
+        {
+            return _foodService.GetPagination(model);
+        }
+        [HttpGet]
+        [Route("count-pagination")]
+        public int CountPagination()
+        {
+            return _foodService.CountPagination();
         }
     }
 }

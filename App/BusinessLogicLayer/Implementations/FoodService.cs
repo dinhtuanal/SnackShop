@@ -36,6 +36,28 @@ namespace BusinessLogicLayer.Implementations
             _context.Foods.Add(food);
             return await _context.SaveChangesAsync();
         }
+
+        public int CountPagination()
+        {
+            var query = from f in _context.Foods
+                        join s in _context.SubCategories
+                        on f.SubCategoryId equals s.SubCategoryId
+                        select new VFood()
+                        {
+                            FoodId = f.FoodId,
+                            Name = f.Name,
+                            Price= f.Price,
+                            Image= f.Image,
+                            Description= f.Description,
+                            Content= f.Content,
+                            Status= f.Status,
+                            DateCreated = f.DateCreated,
+                            SubCategoryId = f.SubCategoryId,
+                            SubCategoryName = s.SubCategoryName
+                        };
+            return query.ToList().Count();
+        }
+
         public async Task<int> Delete(string foodId)
         {
             var food = await _context.Foods.FindAsync(Guid.Parse(foodId));
@@ -134,6 +156,28 @@ namespace BusinessLogicLayer.Implementations
                 throw new SnackShopException("Can not find this food");
             }
             return vFoods;
+        }
+
+        public List<VFood> GetPagination(PageViewModel model)
+        {
+            var query = from f in _context.Foods
+                        join s in _context.SubCategories
+                        on f.SubCategoryId equals s.SubCategoryId
+                        select new VFood()
+                        {
+                            FoodId = f.FoodId,
+                            Name = f.Name,
+                            Price = f.Price,
+                            Image = f.Image,
+                            Description = f.Description,
+                            Content = f.Content,
+                            Status = f.Status,
+                            DateCreated = f.DateCreated,
+                            SubCategoryId = f.SubCategoryId,
+                            SubCategoryName = s.SubCategoryName
+                        };
+            var foods = query.Skip((model.PageIndex-1)*model.PageSize).Take(model.PageSize).ToList();
+            return foods;
         }
 
         public async Task<int> Update(FoodViewModel model)

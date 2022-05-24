@@ -23,6 +23,18 @@ namespace Admin.Controllers
             var foods = await _foodClient.GetAll();
             return View(foods);
         }
+        [AllowAnonymous]
+        public async Task<IActionResult> GetPagination_Pta([FromBody]PageViewModel model)
+        {
+            var result = await _foodClient.GetPagination(model);
+            return PartialView(result);
+        }
+        [AllowAnonymous]
+        public async Task<JsonResult> CountPagination()
+        {
+            int count = await _foodClient.CountPagination();
+            return Json(new { result = count });
+        }
         public async Task<IActionResult> Detail(string foodId)
         {
             VFood food = await _foodClient.GetById(foodId);

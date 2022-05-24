@@ -23,7 +23,7 @@ namespace Clients.Implementations
         public async Task<int> Delete(string subCategoryId, string token)
         {
             httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + token);
-            var response = await httpClient.DeleteAsync("subcategories/delete/{subCategoryId}");
+            var response = await httpClient.DeleteAsync("subcategories/delete/"+ subCategoryId);
             return (int)response.StatusCode;
 
         }
@@ -38,7 +38,7 @@ namespace Clients.Implementations
 
         public async Task<List<VSubCategory>> GetByCategoryId(string categoryId)
         {
-            var response = await httpClient.GetAsync("subcategories/{categoryId}/subcategories");
+            var response = await httpClient.GetAsync($"subcategories/{categoryId}/subcategories");
             var content = await response.Content.ReadAsStringAsync();
             List<VSubCategory> result = JsonConvert.DeserializeObject<List<VSubCategory>>(content);
             return result;
@@ -46,7 +46,7 @@ namespace Clients.Implementations
 
         public async Task<VSubCategory> GetById(string subCategoryId)
         {
-            var response = await httpClient.GetAsync("subcategories/{subCategoryId}");
+            var response = await httpClient.GetAsync("subcategories/"+subCategoryId);
             var content = await response.Content.ReadAsStringAsync();
             VSubCategory result = JsonConvert.DeserializeObject<VSubCategory>(content);
             return result;

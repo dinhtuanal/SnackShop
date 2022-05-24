@@ -122,8 +122,12 @@
             data: { foodId: tranferId },
             success: function (response) {
                 var data = response.statusCode;
-                console.log(data);
-                alert("Xóa thành công");
+                if (data == 200) {
+                    console.log(data);
+                    alert("Xóa thành công");
+                } else {
+                    alert("Xóa không thành công");
+                }
             },
             error: function () {
                 console.log("Lỗi");

@@ -13,10 +13,13 @@
 @section SlimPageTitle{
     Thể loại phụ
 }
+@section Script{
+    <script src="js/subcategory.js"></script>
+}
 <div class="section-wrapper mg-t-20">
     <label class="section-title">Thể loại phụ</label>
     <p class="mg-b-20 mg-sm-b-40"></p>
-    <a data-toggle="modal" href="#model-add" data-id="" data-target="#model-add" class="btn btn-oblong btn-success mg-b-10">Thêm mới</a>
+    <a href="@Url.Action("add","subcategory", new {subCategoryId = ""})" class="btn btn-oblong btn-success mg-b-10">Thêm mới</a>
 
     <div class="table-responsive">
     <table class="table table-bordered mg-b-0 text-center">
@@ -42,42 +45,12 @@
             </td>
             <td>@item.CategoryName</td>
             <td>
-                <a class="" data-toggle="modal" href="#model-add" data-id="" data-target="#model-add"><i class="fa fa-edit text-success"></i></a>
-                <a href=""><i class="fa fa-trash text-danger"></i></a>
+                <a href="@Url.Action("add","subcategory", new {subCategoryId = @item.SubCategoryId})" class="" ><i class="fa fa-edit text-success"></i></a>
+                <a class="delete" data-id="@item.SubCategoryId" href=""><i class="fa fa-trash text-danger"></i></a>
             </td>       
         </tr>
         }
         </tbody>
     </table>
     </div><!-- table-responsive -->
-</div>
-<!--Modal arear-->
-<div id="model-add" class="modal fade show" >
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content tx-size-sm">
-            <div class="modal-header pd-x-20">
-                <h6 class="tx-14 mg-b-0 tx-uppercase tx-inverse tx-bold">Cập nhật tên thể loại</h6>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">×</span>
-                </button>
-            </div>
-            <div class="modal-body pd-20">
-                <div class="form-group">
-                    <input class="form-control" type="text" name="#" value="Tên thể loại phụ" placeholder="Vui lòng nhập tên thể loại" style="width: 700px">
-                    <textarea rows="6" class="form-control mt-3" type="text" name="#" value="Mô tả" placeholder="Vui lòng nhập tên thể loại" style="width: 700px"></textarea>
-                    <label for="categoryName"></label>
-                    <select class="form-control">
-                        <option value="1">Món ăn nhanh</option>
-                        <option value="2">Đồ uống</option>
-                        <option value="3">Trà sữa</option>
-                        <option value="4">Nước uống có ga</option>
-                    </select>
-                </div>
-            </div><!-- modal-body -->
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary">Save changes</button>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div><!-- modal-dialog -->
 </div>
