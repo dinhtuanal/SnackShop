@@ -38,7 +38,7 @@ namespace Clients.Implementations
 
         public async Task<List<VSubCategory>> GetByCategoryId(string categoryId)
         {
-            var response = await httpClient.GetAsync("get-by-categoryId/"+categoryId);
+            var response = await httpClient.GetAsync("subcategories/get-by-categoryId/" + categoryId);
             var content = await response.Content.ReadAsStringAsync();
             List<VSubCategory> result = JsonConvert.DeserializeObject<List<VSubCategory>>(content);
             return result;
