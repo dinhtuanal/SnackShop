@@ -1,0 +1,20 @@
+﻿@using SharedObjects.ValueObjects
+@model List<VSubCategory>
+@{
+    var categories = (List<VCategory>)ViewBag.Categories;
+}
+@foreach (var cate in categories)
+{
+    <div class="col-md-4 header-navigation-col">
+        <h4>@cate.CategoryName</h4>
+        <ul>
+            @foreach (var item in Model)
+            {
+                if (item.CategoryId == cate.CategoryId)
+                {
+                    <li><a href="shop-product-list.html">@item.SubCategoryName</a></li>
+                }
+            }
+        </ul>
+    </div>
+}

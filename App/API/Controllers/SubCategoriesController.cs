@@ -75,14 +75,11 @@ namespace API.Controllers
             }
             return BadRequest(400);
         }
-        [Authorize(AuthenticationSchemes = "Bearer")]
-        [Authorize(Roles = "admin")]
         [HttpGet]
-        [Route("{categoryId}/subcategories")]
+        [Route("get-by-categoryId/{categoryId}")]
         public async Task<List<VSubCategory>> GetByCategoryId(string categoryId)
         {
             return await _subCategoryService.GetByCategoryId(categoryId);
-            
         }
     }
 }

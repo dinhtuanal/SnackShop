@@ -1,7 +1,17 @@
+using Clients.Implementations;
+using Clients.Interfaces;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddRazorPages().AddRazorRuntimeCompilation();
+
+#region DI
+builder.Services.AddTransient<ICategoryClient, CategoryClient>();
+builder.Services.AddTransient<ISubCategoryClient, SubCategoryClient>();
+builder.Services.AddTransient<IFoodClient, FoodClient>();
+#endregion
 
 var app = builder.Build();
 

@@ -6,7 +6,7 @@
     {
         <tr>
             <td><a href="@Url.Action("detail", "food", new {foodId = item.FoodId})">@item.Name</a></td>
-            <td>@item.Price</td>
+            <td>@item.Price.ToString("N0") VNĐ</td>
             <td><img width="100" src="@item.Image" /></td>
             <td>@item.Status</td>
             <td>@item.SubCategoryName</td>

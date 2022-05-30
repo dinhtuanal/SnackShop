@@ -1,0 +1,15 @@
+﻿@using SharedObjects.ValueObjects
+@model List<VFood>
+@for (var i=0; i < 4;i++)
+{
+    <div class="col-md-3 col-sm-4 col-xs-6">
+        <div class="product-item">
+            <div class="pi-img-wrapper">
+                <a  href="#"><img src="@Model[i].Image" class="img-responsive" alt="@Model[i].Name"></a>
+            </div>
+            <h3><a href="shop-item.html">@Model[i].Name</a></h3>
+            <div class="pi-price">@Model[i].Price.ToString("N0") VNĐ</div>
+            <a data-id="@Model[i].FoodId" class="btn btn-default add2cart">Add to cart</a>
+        </div>
+    </div>
+}

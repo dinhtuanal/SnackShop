@@ -1,0 +1,6 @@
+﻿@using SharedObjects.ValueObjects
+@model List<VCategory>
+@foreach (var item in Model)
+{
+    <li><a href="@Url.Action("Detail","Category",new {categoryId = @item.CategoryId})">@item.CategoryName</a></li>
+}

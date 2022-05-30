@@ -12,7 +12,7 @@ builder.Services.AddRazorPages().AddRazorRuntimeCompilation();
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(option =>
 {
     option.LoginPath = "/Account/Login";
-    option.LogoutPath = "/Account/Logout";
+    option.LogoutPath = "/Account/LogOut";
     option.AccessDeniedPath = "/Home/AccessDenied";
 
 });

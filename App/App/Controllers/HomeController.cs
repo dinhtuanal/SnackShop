@@ -1,4 +1,5 @@
 ﻿using App.Models;
+using Clients.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -7,15 +8,17 @@ namespace App.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly IFoodClient _foodClient;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, IFoodClient foodClient)
         {
             _logger = logger;
+            _foodClient = foodClient;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            return View(await _foodClient.GetAll());
         }
 
         public IActionResult Privacy()
