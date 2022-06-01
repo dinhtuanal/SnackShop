@@ -37,6 +37,7 @@
     <link href="~/assets/corporate/css/style-responsive.css" rel="stylesheet">
     <link href="~/assets/corporate/css/themes/red.css" rel="stylesheet" id="style-color">
     <link href="~/assets/corporate/css/custom.css" rel="stylesheet">
+    <link href="~/css/layout.css" rel="stylesheet">
     <!-- Theme styles END -->
 </head>
 <!-- Head END -->
@@ -66,7 +67,7 @@
                 <!-- BEGIN TOP BAR LEFT PART -->
                 <div class="col-md-6 col-sm-6 additional-shop-info">
                     <ul class="list-unstyled list-inline">
-                        <li><a href="tel:0898178915"><i class="fa fa-phone"></i><span>+1 456 6717</span></li></a>
+                        <li><a href="tel:0898178915"><i class="fa fa-phone"></i><span>0898178910</span></li></a>
                         <!-- BEGIN CURRENCIES -->
                         <li class="shop-currencies">
                             <a target="_blank" href="https://www.facebook.com/dinhtuanal"><i class="fa fa-facebook-square"></i></a>
@@ -78,11 +79,6 @@
                 <!-- END TOP BAR LEFT PART -->
                 <!-- BEGIN TOP BAR MENU -->
                 <div class="col-md-6 col-sm-6 additional-nav">
-                    <ul class="list-unstyled list-inline pull-right">
-                        <li><a href="shop-account.html">My Account</a></li>
-                        <li><a href="shop-checkout.html">Checkout</a></li>
-                        <li><a href="page-login.html">Log In</a></li>
-                    </ul>
                 </div>
                 <!-- END TOP BAR MENU -->
             </div>
@@ -92,85 +88,12 @@
     <!-- BEGIN HEADER -->
     <div class="header">
         <div class="container">
-            <a class="site-logo" href="shop-index.html"><img src="~/assets/corporate/img/logos/logo-shop-red.png" alt="Metronic Shop UI"></a>
+            <a class="site-logo" asp-action="Index" asp-controller="Home">TNALEE SHOP</a>
 
             <a href="javascript:void(0);" class="mobi-toggler"><i class="fa fa-bars"></i></a>
 
             <!-- BEGIN CART -->
-            <div class="top-cart-block">
-                <div class="top-cart-info">
-                    <a href="javascript:void(0);" class="top-cart-info-count">3 items</a>
-                    <a href="javascript:void(0);" class="top-cart-info-value">$1260</a>
-                </div>
-                <i class="fa fa-shopping-cart"></i>
-
-                <div class="top-cart-content-wrapper">
-                    <div class="top-cart-content">
-                        <ul class="scroller" style="height: 250px;">
-                            <li>
-                                <a href="shop-item.html"><img src="~/assets/pages/img/cart-img.jpg" alt="Rolex Classic Watch" width="37" height="34"></a>
-                                <span class="cart-content-count">x 1</span>
-                                <strong><a href="shop-item.html">Rolex Classic Watch</a></strong>
-                                <em>$1230</em>
-                                <a href="javascript:void(0);" class="del-goods">&nbsp;</a>
-                            </li>
-                            <li>
-                                <a href="shop-item.html"><img src="~/assets/pages/img/cart-img.jpg" alt="Rolex Classic Watch" width="37" height="34"></a>
-                                <span class="cart-content-count">x 1</span>
-                                <strong><a href="shop-item.html">Rolex Classic Watch</a></strong>
-                                <em>$1230</em>
-                                <a href="javascript:void(0);" class="del-goods">&nbsp;</a>
-                            </li>
-                            <li>
-                                <a href="shop-item.html"><img src="~/assets/pages/img/cart-img.jpg" alt="Rolex Classic Watch" width="37" height="34"></a>
-                                <span class="cart-content-count">x 1</span>
-                                <strong><a href="shop-item.html">Rolex Classic Watch</a></strong>
-                                <em>$1230</em>
-                                <a href="javascript:void(0);" class="del-goods">&nbsp;</a>
-                            </li>
-                            <li>
-                                <a href="shop-item.html"><img src="~/assets/pages/img/cart-img.jpg" alt="Rolex Classic Watch" width="37" height="34"></a>
-                                <span class="cart-content-count">x 1</span>
-                                <strong><a href="shop-item.html">Rolex Classic Watch</a></strong>
-                                <em>$1230</em>
-                                <a href="javascript:void(0);" class="del-goods">&nbsp;</a>
-                            </li>
-                            <li>
-                                <a href="shop-item.html"><img src="~/assets/pages/img/cart-img.jpg" alt="Rolex Classic Watch" width="37" height="34"></a>
-                                <span class="cart-content-count">x 1</span>
-                                <strong><a href="shop-item.html">Rolex Classic Watch</a></strong>
-                                <em>$1230</em>
-                                <a href="javascript:void(0);" class="del-goods">&nbsp;</a>
-                            </li>
-                            <li>
-                                <a href="shop-item.html"><img src="~/assets/pages/img/cart-img.jpg" alt="Rolex Classic Watch" width="37" height="34"></a>
-                                <span class="cart-content-count">x 1</span>
-                                <strong><a href="shop-item.html">Rolex Classic Watch</a></strong>
-                                <em>$1230</em>
-                                <a href="javascript:void(0);" class="del-goods">&nbsp;</a>
-                            </li>
-                            <li>
-                                <a href="shop-item.html"><img src="~/assets/pages/img/cart-img.jpg" alt="Rolex Classic Watch" width="37" height="34"></a>
-                                <span class="cart-content-count">x 1</span>
-                                <strong><a href="shop-item.html">Rolex Classic Watch</a></strong>
-                                <em>$1230</em>
-                                <a href="javascript:void(0);" class="del-goods">&nbsp;</a>
-                            </li>
-                            <li>
-                                <a href="shop-item.html"><img src="~/assets/pages/img/cart-img.jpg" alt="Rolex Classic Watch" width="37" height="34"></a>
-                                <span class="cart-content-count">x 1</span>
-                                <strong><a href="shop-item.html">Rolex Classic Watch</a></strong>
-                                <em>$1230</em>
-                                <a href="javascript:void(0);" class="del-goods">&nbsp;</a>
-                            </li>
-                        </ul>
-                        <div class="text-right">
-                            <a href="shop-shopping-cart.html" class="btn btn-default">View Cart</a>
-                            <a href="shop-checkout.html" class="btn btn-primary">Checkout</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @await Component.InvokeAsync("SmallCart")
             <!--END CART -->
             <!-- BEGIN NAVIGATION -->
             <div class="header-navigation">
@@ -227,8 +150,8 @@
                     </li>
 
 
-                    <li><a href="" target="_blank">About</a></li>
-                    <li><a href="" target="_blank">Contact</a></li>
+                    <li><a href="" target="_blank">Về chúng tôi</a></li>
+                    <li><a href="" target="_blank">Liên hệ</a></li>
 
                     <!-- BEGIN TOP SEARCH -->
                     <li class="menu-search">
@@ -253,94 +176,8 @@
     </div>
     <!-- Header END -->
     <!-- BEGIN SLIDER -->
-    <div class="page-slider margin-bottom-35">
-        <div id="carousel-example-generic" class="carousel slide carousel-slider">
-            <!-- Indicators -->
-            <ol class="carousel-indicators">
-                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-                <li data-target="#carousel-example-generic" data-slide-to="3"></li>
-            </ol>
+    @RenderSection("TopMain", false)
 
-            <!-- Wrapper for slides -->
-            <div class="carousel-inner" role="listbox">
-                <!-- First slide -->
-                <div class="item carousel-item-four active">
-                    <div class="container">
-                        <div class="carousel-position-four text-center">
-                            <h2 class="margin-bottom-20 animate-delay carousel-title-v3 border-bottom-title text-uppercase" data-animation="animated fadeInDown">
-                                Tones of <br /><span class="color-red-v2">Shop UI Features</span><br /> designed
-                            </h2>
-                            <p class="carousel-subtitle-v2" data-animation="animated fadeInUp">
-                                Lorem ipsum dolor sit amet constectetuer diam <br />
-                                adipiscing elit euismod ut laoreet dolore.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Second slide -->
-                <div class="item carousel-item-five">
-                    <div class="container">
-                        <div class="carousel-position-four text-center">
-                            <h2 class="animate-delay carousel-title-v4" data-animation="animated fadeInDown">
-                                Unlimted
-                            </h2>
-                            <p class="carousel-subtitle-v2" data-animation="animated fadeInDown">
-                                Layout Options
-                            </p>
-                            <p class="carousel-subtitle-v3 margin-bottom-30" data-animation="animated fadeInUp">
-                                Fully Responsive
-                            </p>
-                            <a class="carousel-btn" href="#" data-animation="animated fadeInUp">See More Details</a>
-                        </div>
-                        <img class="carousel-position-five animate-delay hidden-sm hidden-xs" src="~/assets/pages/img/shop-slider/slide2/price.png" alt="Price" data-animation="animated zoomIn">
-                    </div>
-                </div>
-
-                <!-- Third slide -->
-                <div class="item carousel-item-six">
-                    <div class="container">
-                        <div class="carousel-position-four text-center">
-                            <span class="carousel-subtitle-v3 margin-bottom-15" data-animation="animated fadeInDown">
-                                Full Admin &amp; Frontend
-                            </span>
-                            <p class="carousel-subtitle-v4" data-animation="animated fadeInDown">
-                                eCommerce UI
-                            </p>
-                            <p class="carousel-subtitle-v3" data-animation="animated fadeInDown">
-                                Is Ready For Your Project
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Fourth slide -->
-                <div class="item carousel-item-seven">
-                    <div class="center-block">
-                        <div class="center-block-wrap">
-                            <div class="center-block-body">
-                                <h2 class="carousel-title-v1 margin-bottom-20" data-animation="animated fadeInDown">
-                                    The most <br />
-                                    wanted bijouterie
-                                </h2>
-                                <a class="carousel-btn" href="#" data-animation="animated fadeInUp">But It Now!</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Controls -->
-            <a class="left carousel-control carousel-control-shop" href="#carousel-example-generic" role="button" data-slide="prev">
-                <i class="fa fa-angle-left" aria-hidden="true"></i>
-            </a>
-            <a class="right carousel-control carousel-control-shop" href="#carousel-example-generic" role="button" data-slide="next">
-                <i class="fa fa-angle-right" aria-hidden="true"></i>
-            </a>
-        </div>
-    </div>
     <!-- END SLIDER -->
 
     <div class="main">
@@ -378,24 +215,24 @@
                 <div class="col-md-4 steps-block-col">
                     <i class="fa fa-truck"></i>
                     <div>
-                        <h2>Free shipping</h2>
-                        <em>Express delivery withing 3 days</em>
+                        <h2>Free ship</h2>
+                        <em>Trong phạm vi 10km</em>
                     </div>
                     <span>&nbsp;</span>
                 </div>
                 <div class="col-md-4 steps-block-col">
                     <i class="fa fa-gift"></i>
                     <div>
-                        <h2>Daily Gifts</h2>
-                        <em>3 Gifts daily for lucky customers</em>
+                        <h2>Khuyến mãi đến 100%</h2>
+                        <em>Cho khách hàng may mắn nhất trong tháng</em>
                     </div>
                     <span>&nbsp;</span>
                 </div>
                 <div class="col-md-4 steps-block-col">
                     <i class="fa fa-phone"></i>
                     <div>
-                        <h2>477 505 8877</h2>
-                        <em>24/7 customer care available</em>
+                        <h2>0898178910</h2>
+                        <em>Luôn sẵn sàng 24/7</em>
                     </div>
                 </div>
             </div>
@@ -408,41 +245,40 @@
             <div class="row">
                 <!-- BEGIN BOTTOM ABOUT BLOCK -->
                 <div class="col-md-3 col-sm-6 pre-footer-col">
-                    <h2>About us</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam sit nonummy nibh euismod tincidunt ut laoreet dolore magna aliquarm erat sit volutpat. Nostrud exerci tation ullamcorper suscipit lobortis nisl aliquip  commodo consequat. </p>
-                    <p>Duis autem vel eum iriure dolor vulputate velit esse molestie at dolore.</p>
+                    <h2>Về chúng tôi</h2>
+                    <p>Shop chuyên bán thức ăn nhanh như trà sữa, đồ ăn vặt</p>
+                    <p>Với kinh nghiệm hơn 5 năm trong lĩnh vực đồ ăn vặt, cửa hàng chúng tôi sẽ mang đến cho quý khách trải nghiệm quý giá nhất</p>
                 </div>
                 <!-- END BOTTOM ABOUT BLOCK -->
                 <!-- BEGIN BOTTOM INFO BLOCK -->
                 <div class="col-md-3 col-sm-6 pre-footer-col">
-                    <h2>Information</h2>
+                    <h2>Thông tin</h2>
                     <ul class="list-unstyled">
-                        <li><i class="fa fa-angle-right"></i> <a href="javascript:;">Delivery Information</a></li>
-                        <li><i class="fa fa-angle-right"></i> <a href="javascript:;">Customer Service</a></li>
-                        <li><i class="fa fa-angle-right"></i> <a href="javascript:;">Order Tracking</a></li>
-                        <li><i class="fa fa-angle-right"></i> <a href="javascript:;">Shipping &amp; Returns</a></li>
-                        <li><i class="fa fa-angle-right"></i> <a href="contacts.html">Contact Us</a></li>
-                        <li><i class="fa fa-angle-right"></i> <a href="javascript:;">Careers</a></li>
-                        <li><i class="fa fa-angle-right"></i> <a href="javascript:;">Payment Methods</a></li>
+                        <li><i class="fa fa-angle-right"></i> <a href="javascript:;">Facebook</a></li>
+                        <li><i class="fa fa-angle-right"></i> <a href="javascript:;">Zalo</a></li>
+                        <li><i class="fa fa-angle-right"></i> <a href="javascript:;">Instagram</a></li>
+                        <li><i class="fa fa-angle-right"></i> <a href="javascript:;">Fanpage</a></li>
                     </ul>
                 </div>
                 <!-- END INFO BLOCK -->
                 <!-- BEGIN TWITTER BLOCK -->
                 <div class="col-md-3 col-sm-6 pre-footer-col">
-                    <h2 class="margin-bottom-0">Latest Tweets</h2>
-                    <a class="twitter-timeline" href="https://twitter.com/twitterapi" data-tweet-limit="2" data-theme="dark" data-link-color="#57C8EB" data-widget-id="455411516829736961" data-chrome="noheader nofooter noscrollbar noborders transparent">Loading tweets by </a>
+                    <h2>Danh mục</h2>
+                    <ul class="list-unstyled">
+                        <li><i class="fa fa-angle-right"></i> <a href="javascript:;">Trà sữa</a></li>
+                        <li><i class="fa fa-angle-right"></i> <a href="javascript:;">Trà đào</a></li>
+                        <li><i class="fa fa-angle-right"></i> <a href="javascript:;">Xiên gà nướng</a></li>
+                    </ul>
                 </div>
                 <!-- END TWITTER BLOCK -->
                 <!-- BEGIN BOTTOM CONTACTS -->
                 <div class="col-md-3 col-sm-6 pre-footer-col">
-                    <h2>Our Contacts</h2>
+                    <h2>Liên hệ</h2>
                     <address class="margin-bottom-40">
-                        35, Lorem Lis Street, Park Ave<br>
-                        California, US<br>
-                        Phone: 300 323 3456<br>
-                        Fax: 300 323 1456<br>
-                        Email: <a href="mailto:info@metronic.com">info@metronic.com</a><br>
-                        Skype: <a href="skype:metronic">metronic</a>
+                        Linh Anh, Triệu Trạch, Triệu Phong, Quảng Trị<br>
+                        Phone: 0898 178 910<br>
+                        Email: <a href="mailto:tuanpro@gmail.com">tuanpro@gmail.com</a><br>
+                        Skype: <a href="#">Messeger</a>
                     </address>
                 </div>
                 <!-- END BOTTOM CONTACTS -->
@@ -469,9 +305,9 @@
                         <h2>Newsletter</h2>
                         <form action="#">
                             <div class="input-group">
-                                <input type="text" placeholder="youremail@mail.com" class="form-control">
+                                <input type="text" placeholder="emailcuaban@mail.com" class="form-control">
                                 <span class="input-group-btn">
-                                    <button class="btn btn-primary" type="submit">Subscribe</button>
+                                    <button class="btn btn-primary" type="submit">Đăng ký</button>
                                 </span>
                             </div>
                         </form>
@@ -488,7 +324,7 @@
             <div class="row">
                 <!-- BEGIN COPYRIGHT -->
                 <div class="col-md-4 col-sm-4 padding-top-10">
-                    2015 © Keenthemes. ALL Rights Reserved.
+                    2022 © TNALEE SHOP - Cửa hàng ăn vặt
                 </div>
                 <!-- END COPYRIGHT -->
                 <!-- BEGIN PAYMENTS -->

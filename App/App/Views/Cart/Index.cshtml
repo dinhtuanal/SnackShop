@@ -1,6 +1,66 @@
 ﻿@using SharedObjects.ValueObjects
 @model List<CartItem>
-
-@foreach(var item in Model){
-    <p>@item.Name</p>
+@{
+    float total = 0;
 }
+
+<div class="row margin-bottom-40">
+    <!-- BEGIN CONTENT -->
+    <div class="col-md-12 col-sm-12">
+        <h1>Shopping cart</h1>
+        <div class="goods-page">
+            <div class="goods-data clearfix">
+                <div class="table-wrapper-responsive">
+                    <table summary="Shopping cart">
+                        <tr>
+                            <th class="goods-page-image">Ảnh</th>
+                            <th class="goods-page-description">Món ăn</th>
+                            <th class="goods-page-quantity">Số lượng</th>
+                            <th class="goods-page-price">Đơn giá</th>
+                            <th class="goods-page-total">thành tiền</th>
+                            <th class="goods-page-price"></th>
+                        </tr>
+                        @foreach (var item in Model)
+                        {
+                            total += (float)item.TotalPrice;
+                            <tr>
+                                <td class="goods-page-image">
+                                    <a href="javascript:;"><img src="@item.Image" alt="@item.Name"></a>
+                                </td>
+                                <td class="goods-page-description">
+                                    <h3><a href="javascript:;">@item.Name</a></h3>
+                                </td>
+                                <td class="goods-page-quantity">
+                                    <div class="product-quantity">
+                                        <input id="product-quantity" type="text" value="@item.Qty" readonly class="form-control input-sm">
+                                    </div>
+                                </td>
+                                <td class="goods-page-price">
+                                    <strong>@item.Price.ToString("N0")</strong>
+                                </td>
+                                <td class="goods-page-total">
+                                    <strong>@item.TotalPrice.ToString("N0")</strong>
+                                </td>
+                                <td class="del-goods-col">
+                                    <a class="del-goods" title="Xóa khỏi giỏ hàng" href="">&nbsp;</a>
+                                </td>
+                            </tr>
+                        }
+                    </table>
+                </div>
+
+                <div class="shopping-total">
+                    <ul>
+                        <li>
+                            <em>Tổng tiền</em>
+                            <strong class="price">@total.ToString("N0")</strong>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <a href="/#buy-product" class="btn btn-default" type="submit">Mua tiếp <i class="fa fa-shopping-cart"></i></a>
+            <a asp-action="CheckOut" asp-controller="Cart" class="btn btn-primary" type="submit">Thanh toán <i class="fa fa-check"></i></a>
+        </div>
+    </div>
+    <!-- END CONTENT -->
+</div>

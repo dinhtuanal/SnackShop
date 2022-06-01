@@ -9,10 +9,10 @@ namespace App.Controllers
 {
     public class CartController : Controller
     {
-        private readonly IFoodService _foodService;
-        public CartController(IFoodService foodService)
+        private readonly IFoodClient _foodClient;
+        public CartController(IFoodClient foodClient)
         {
-            _foodService = foodService;
+            _foodClient = foodClient;
         }
         public List<CartItem> Carts
         {
@@ -27,13 +27,13 @@ namespace App.Controllers
             }
         }
         [HttpPost]
-        public IActionResult AddToCart(string id)
+        public async Task<JsonResult> AddToCart(string id)
         {
             var myCart = Carts;
             var item = myCart.SingleOrDefault(p => p.Id == id);
             if (item == null)
             {
-                var food = _foodService.Get(id);
+                var food = await _foodClient.GetById(id);
                 item = new CartItem
                 {
                     Id = id,
@@ -51,7 +51,7 @@ namespace App.Controllers
                 item.TotalPrice += item.Price;
             }
             HttpContext.Session.Set("Cart", myCart);
-            return Ok();
+            return Json(new {result = 1});
         }
         [HttpGet]
         public List<CartItem> GetAllItem()
@@ -62,7 +62,6 @@ namespace App.Controllers
         public async Task<IActionResult> Index()
         {
             List<CartItem> myCart = HttpContext.Session.Get<List<CartItem>>("Cart");
-            //var cart = await _cartClient.GetAllItem();
             return View(myCart);
         }
     }
