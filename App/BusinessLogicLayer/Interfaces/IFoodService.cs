@@ -14,6 +14,7 @@ namespace BusinessLogicLayer.Interfaces
         public Task<int> Update(FoodViewModel model);
         public Task<int> Delete(string foodId);
         public Task<VFood> GetById(string foodId);
+        public VFood Get(string foodId);
         public List<VFood> GetAll();
         public Task<List<VFood>> GetBySubCategoryId(string subCategoryId);
         public int CountPagination();

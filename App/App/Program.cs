@@ -11,7 +11,15 @@ builder.Services.AddRazorPages().AddRazorRuntimeCompilation();
 builder.Services.AddTransient<ICategoryClient, CategoryClient>();
 builder.Services.AddTransient<ISubCategoryClient, SubCategoryClient>();
 builder.Services.AddTransient<IFoodClient, FoodClient>();
+builder.Services.AddTransient<ICartClient, CartClient>();
 #endregion
+
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromDays(1);
+    options.Cookie.HttpOnly = true;
+    options.Cookie.IsEssential = true;
+});
 
 var app = builder.Build();
 
@@ -29,6 +37,8 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthorization();
+
+app.UseSession();
 
 app.MapControllerRoute(
     name: "default",

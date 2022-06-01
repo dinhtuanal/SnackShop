@@ -69,6 +69,25 @@ namespace BusinessLogicLayer.Implementations
             return await _context.SaveChangesAsync();
         }
 
+        public  VFood Get(string foodId)
+        {
+            var food =  _context.Foods.Find(Guid.Parse(foodId));
+            if(food == null)
+            {
+                return null;
+            }
+            return new VFood
+            {
+                FoodId = Guid.Parse(foodId),
+                Name = food.Name,
+                Price = food.Price,
+                Image = food.Image,
+                Description = food.Description,
+                Content = food.Content,
+                DateCreated = food.DateCreated,
+            };
+        }
+
         public List<VFood> GetAll()
         {
             var query = from f in _context.Foods

@@ -15,6 +15,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes = true
 build_property.MSBuildProjectDirectory = D:\TaiLieu\ASP Core\Project\SnackShop\App\App
 build_property._RazorSourceGeneratorDebug = 
 
+[D:/TaiLieu/ASP Core/Project/SnackShop/App/App/Views/Cart/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/TaiLieu/ASP Core/Project/SnackShop/App/App/Views/Category/Detail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcRGV0YWlsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

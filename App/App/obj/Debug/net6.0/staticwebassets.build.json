@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "KydIZVdEPiVoEKZJn6VNuPIdr9RkKb3/YZzOVrjFcbw=",
+  "Hash": "5NZrY5529Su9Csa4xu/nuKPTQJWTl0BZryBGWbXSF1s=",
   "Source": "App",
   "BasePath": "_content/App",
   "Mode": "Default",
@@ -7478,6 +7478,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "D:\\TaiLieu\\ASP Core\\Project\\SnackShop\\App\\App\\wwwroot\\js\\addtocart.js",
+      "SourceId": "App",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\TaiLieu\\ASP Core\\Project\\SnackShop\\App\\App\\wwwroot\\",
+      "BasePath": "_content/App",
+      "RelativePath": "js/addtocart.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\addtocart.js"
     },
     {
       "Identity": "D:\\TaiLieu\\ASP Core\\Project\\SnackShop\\App\\App\\wwwroot\\js\\site.js",

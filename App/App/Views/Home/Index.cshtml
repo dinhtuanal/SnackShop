@@ -26,7 +26,7 @@
                         </div>
                         <h3><a href="shop-item.html">@Model[i].Name</a></h3>
                         <div class="pi-price">@Model[i].Price.ToString("N0") VNĐ</div>
-                        <a href="javascript:;" class="btn btn-default add2cart">Add to cart</a>
+                        <a class="btn btn-default addtocart"><i class="fa fa-shopping-cart"></i></a>
                     </div>
                 </div>
             }
@@ -59,7 +59,7 @@
                                 </div>
                                 <h3><a href="shop-item.html">@item.Name</a></h3>
                                 <div class="pi-price">@item.Price.ToString("N0") VNĐ</div>
-                                <a href="javascript:;" class="btn btn-default add2cart">Thêm vào giỏ hàng</a>
+                                <a href="javascript:;" title="Thêm vào giỏ hàng" class="btn btn-default"><i class="fa fa-shopping-cart"></i></a>
                                 <div class="sticker sticker-new"></div>
                             </div>
                         </div>
@@ -72,3 +72,6 @@
     <!-- END CONTENT -->
 </div>
 <!-- END SIDEBAR & CONTENT -->
+@section scripts{
+    <script src="~/js/addtocart.js"></script>
+}
