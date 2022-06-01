@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "fgOtm74r1zBcu9PE9oBUI2ycrpV04h7BSiZ37XI5C9pItdbfRlqX7t3k0sL59l7KgDM7CHPJjZKRAR/1JP/lag==",
+  "dgSpecHash": "HN/QTA/8ndfy36O8UvIiilU8dpp4fhBOI4kUkXfcVnSAaiDv+JnD3CN+FKTueWhIt2rBkOttEbCdau2KkuYmYg==",
   "success": true,
   "projectFilePath": "D:\\TaiLieu\\ASP Core\\Project\\SnackShop\\App\\SharedObjects\\SharedObjects.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\HP\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.17\\microsoft.aspnetcore.http.features.5.0.17.nupkg.sha512",
+    "C:\\Users\\HP\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.1\\microsoft.extensions.primitives.5.0.1.nupkg.sha512",
+    "C:\\Users\\HP\\.nuget\\packages\\system.io.pipelines\\5.0.2\\system.io.pipelines.5.0.2.nupkg.sha512"
+  ],
   "logs": []
 }

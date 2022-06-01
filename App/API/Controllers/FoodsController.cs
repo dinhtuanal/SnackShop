@@ -77,7 +77,7 @@ namespace API.Controllers
             return Ok(new ResponseResult(200));
         }
         [HttpGet]
-        [Route("{subCategoryId}/food")]
+        [Route("get-by-subcategoryid/{subCategoryId}")]
         public async Task<List<VFood>> GetBySubCategoryId(string subCategoryId)
         {
             return await _foodService.GetBySubCategoryId(subCategoryId);

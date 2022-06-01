@@ -9,15 +9,19 @@ namespace App.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly IFoodClient _foodClient;
+        private readonly ISubCategoryClient _subCategoryClient;
 
-        public HomeController(ILogger<HomeController> logger, IFoodClient foodClient)
+        public HomeController(ILogger<HomeController> logger, IFoodClient foodClient, ISubCategoryClient subCategoryClient)
         {
             _logger = logger;
             _foodClient = foodClient;
+            _subCategoryClient = subCategoryClient;
         }
 
         public async Task<IActionResult> Index()
         {
+            var subCates = await _subCategoryClient.GetAll();
+            ViewBag.SubCates = subCates;
             return View(await _foodClient.GetAll());
         }
 
