@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "5NZrY5529Su9Csa4xu/nuKPTQJWTl0BZryBGWbXSF1s=",
+  "Hash": "U4TUcNzO61LkIWQrBqVh6F0VOMNItdm3I/6eQKKr054=",
   "Source": "App",
   "BasePath": "_content/App",
   "Mode": "Default",
@@ -4658,6 +4658,23 @@
       "OriginalItemSpec": "wwwroot\\assets\\pages\\scripts\\portfolio.js"
     },
     {
+      "Identity": "D:\\TaiLieu\\ASP Core\\Project\\SnackShop\\App\\App\\wwwroot\\assets\\plugins\\bootbox.min.js",
+      "SourceId": "App",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\TaiLieu\\ASP Core\\Project\\SnackShop\\App\\App\\wwwroot\\",
+      "BasePath": "_content/App",
+      "RelativePath": "assets/plugins/bootbox.min.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\plugins\\bootbox.min.js"
+    },
+    {
       "Identity": "D:\\TaiLieu\\ASP Core\\Project\\SnackShop\\App\\App\\wwwroot\\assets\\plugins\\bootstrap\\css\\bootstrap.css",
       "SourceId": "App",
       "SourceType": "Discovered",
@@ -7444,6 +7461,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\plugins\\zoom\\jquery.zoom.min.js"
+    },
+    {
+      "Identity": "D:\\TaiLieu\\ASP Core\\Project\\SnackShop\\App\\App\\wwwroot\\css\\layout.css",
+      "SourceId": "App",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\TaiLieu\\ASP Core\\Project\\SnackShop\\App\\App\\wwwroot\\",
+      "BasePath": "_content/App",
+      "RelativePath": "css/layout.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\layout.css"
     },
     {
       "Identity": "D:\\TaiLieu\\ASP Core\\Project\\SnackShop\\App\\App\\wwwroot\\css\\site.css",
